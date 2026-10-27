@@ -75,16 +75,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
 .agenda-grid .card{display:flex;flex-direction:column;justify-content:center;height:100%;min-height:0;padding:22px 22px}
 .agenda-grid .card h4{font-size:34px;margin:4px 0 8px;line-height:1.25;text-wrap:balance}
 .agenda-grid .card p,.card li{font-size:26px;line-height:1.4}
-.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;margin-top:6px;flex:1;min-height:0;align-items:stretch}
-.contact-grid > div:first-child{display:flex;flex-direction:column;gap:10px;min-height:0;height:100%}
-.contact-grid > div:first-child .card{flex:1.4;display:flex;flex-direction:column;justify-content:center;padding:32px 34px}
-.contact-grid > div:first-child .card .n{font-size:28px;margin-bottom:12px}
-.contact-grid > div:first-child ul.clean li{font-size:34px;margin:18px 0;line-height:1.4;padding-left:34px;color:var(--ink)}
-.contact-grid > div:first-child .card.cream{flex:.7;padding:26px 30px}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:6px;flex:1;min-height:0;align-items:stretch}
+.contact-grid > div:first-child{display:flex;flex-direction:column;gap:16px;min-height:0;height:100%;justify-content:space-evenly}
+.contact-grid > div:first-child .card{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;padding:22px 26px}
+.contact-grid > div:first-child .card .n{font-size:30px;margin-bottom:10px}
+.contact-grid > div:first-child ul.clean li{font-size:36px;margin:14px 0;line-height:1.4;padding-left:36px;color:var(--ink)}
+.contact-grid > div:first-child .card.cream{flex:0 0 auto;padding:20px 24px;justify-content:center}
 .contact-grid > div:first-child .card.cream p{line-height:1.35}
-.contact-grid .card.orange{height:100%;justify-content:center;padding:28px 24px;gap:8px}
-.contact-grid .card.orange .n{font-size:28px;margin-bottom:6px}
-.contact-grid .qr{width:300px;height:300px;margin:8px 0}
+.contact-grid .card.orange{height:100%;justify-content:center;align-items:center;padding:12px 14px;gap:8px}
+.contact-grid .card.orange .n{font-size:24px;margin-bottom:0}
+.contact-grid .qr{width:640px;height:640px;margin:0;padding:8px;border-width:3px;border-radius:18px;flex:none;object-fit:contain}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;
   border:1.5px solid var(--line-strong);border-radius:999px;
   background:var(--panel);font-size:22px;color:var(--ink);white-space:nowrap}
@@ -783,13 +783,13 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .take-grid .card h4{font-size:13px}
 
   /* CONTACT */
-  .contact-grid{grid-template-columns:1.15fr .85fr;gap:6px;margin-top:4px;flex:1;min-height:0}
+  .contact-grid{grid-template-columns:1.1fr .9fr;gap:6px;margin-top:4px;flex:1;min-height:0}
   .contact-grid > div:first-child{gap:5px}
-  .contact-grid > div:first-child .card{padding:10px 10px}
-  .contact-grid > div:first-child .card .n{font-size:12px;margin-bottom:4px}
-  .contact-grid > div:first-child ul.clean li{font-size:12px;margin:5px 0;padding-left:16px;line-height:1.3}
-  .qr{width:118px;height:118px;padding:5px;border-width:2px;border-radius:10px}
-  .contact-grid .card.orange{padding:10px 8px}
+  .contact-grid > div:first-child .card{padding:8px 9px}
+  .contact-grid > div:first-child .card .n{font-size:12px;margin-bottom:3px}
+  .contact-grid > div:first-child ul.clean li{font-size:12px;margin:4px 0;padding-left:16px;line-height:1.3}
+  .contact-grid .qr{width:150px;height:150px;padding:5px;border-width:2px;border-radius:10px;margin:2px 0}
+  .contact-grid .card.orange{padding:8px 6px;gap:4px}
   .contact-grid .card.orange .n{font-size:12px}
 
   /* AGENT (if any) */
@@ -1689,9 +1689,9 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 </section>
 
 <!-- 14 CONTACT -->
-<section class="slide" style="padding:28px 40px 32px">
+<section class="slide" style="padding:22px 40px 26px">
   <div class="kicker r">Contact · 感谢 · 答疑 +30′</div>
-  <div class="h2 r" style="--i:1;font-size:56px;margin:0">带走 · 再约</div>
+  <div class="h2 r" style="--i:1;font-size:48px;margin:0 0 2px">带走 · 再约</div>
   <div class="contact-grid r" style="--i:2">
     <div>
       <div class="card">
@@ -1703,15 +1703,15 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
         </ul>
       </div>
       <div class="card cream">
-        <p style="font-size:32px;color:var(--ink);margin:0;font-weight:700">感谢 · 2026.10.27 · 咨询公司现场</p>
-        <p style="font-size:24px;color:var(--mute);margin-top:12px">与 AI 同行 1427 天 · 60′讲 + 30′答疑 · ←→ / 空格 / 滑动 · F 全屏</p>
+        <p style="font-size:30px;color:var(--ink);margin:0;font-weight:700">感谢 · 2026.10.27 · 咨询公司现场</p>
+        <p style="font-size:22px;color:var(--mute);margin-top:8px">与 AI 同行 1427 天 · 60′讲 + 30′答疑 · ←→ / 空格 / 滑动 · F 全屏</p>
       </div>
     </div>
-    <div class="card orange" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+    <div class="card orange" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
       <div class="n">福秀 · 上海徐汇</div>
-      <img class="qr" src="assets/web/wechat-qr.png" alt="微信二维码 福秀">
-      <div style="font-family:var(--hand);font-size:36px;color:var(--orange2);line-height:1.2">微信 fuxiuDSG</div>
-      <p style="font-size:24px;margin-top:8px;color:var(--mute)">扫码添加 · 继续聊</p>
+      <img class="qr" src="assets/web/wechat-qr-square.png" alt="微信二维码 福秀" width="640" height="640">
+      <div style="font-family:var(--hand);font-size:40px;color:var(--orange2);line-height:1.1;margin-top:0">微信 fuxiuDSG</div>
+      <p style="font-size:22px;margin-top:2px;color:var(--mute)">扫码添加 · 继续聊</p>
     </div>
   </div>
 </section>
