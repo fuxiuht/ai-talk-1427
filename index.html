@@ -494,13 +494,25 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     position:absolute;inset:0;width:100%;height:100%;
     padding:max(8px,env(safe-area-inset-top,0px)) 10px calc(40px + env(safe-area-inset-bottom,0px));
     overflow:hidden;transform:none!important;
-    opacity:1!important;visibility:visible;display:none;
     gap:0;
   }
-  .slide.active{display:flex;opacity:1!important;visibility:visible;transform:none!important}
+  /* Mobile leak fix: mosaic/fullart/icon-wall display:flex (0,2,0) beat .slide display:none (0,1,0);
+     also stop opacity:1!important on inactive slides so they stay fully hidden under active. */
+  .slide, .slide.mosaic-slide, .slide.fullart-slide, .slide.icon-wall-slide {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  .slide.active {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: #0b0b0c;
+    transform: none !important;
+  }
   .noanim .slide{transform:none}
-  /* CRITICAL: display:none→flex + rise anim leaves .r at opacity:0 until scroll repaint on iOS/Chrome */
-  .r,.slide .r,.slide.active .r,.slide.active .card{
+  /* Keep rise-anim elements visible only on the active slide */
+  .slide.active .r, .slide.active .card{
     opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
   .section-num{display:none}
 
@@ -1400,7 +1412,7 @@ lark-cli calendar +agenda --as user</div>
     <a href="https://immilesma.com/blog/grok-bot-practical-guide/" target="_blank" rel="noopener">③ immilesma.com · @miles_mazy</a>
   </div>
   <div class="row r mt-auto" style="--i:4;gap:8px;flex-wrap:wrap">
-    <span class="chip hl">现场：这份课件就是用 Grok Bot 做的</span>
+    <span class="chip hl">这份课件是用 Grok Bot 做的</span>
     <span class="chip cream">来源 X · status/2112761781080965416 · 手册站 · 实操案例</span>
     <span class="chip">下一页 · Yobiru Friends 跨人协作</span>
   </div>
