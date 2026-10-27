@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>与 AI 同行 1427 天 · 福秀</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,9 +54,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
   40%{box-shadow:0 10px 28px -18px rgba(0,0,0,.6),0 0 22px 0 rgba(217,119,87,.22)}
   100%{box-shadow:0 10px 28px -18px rgba(0,0,0,.6),0 0 0 0 rgba(217,119,87,0)}
 }
-.noanim .r{opacity:1!important;transform:none!important;animation:none!important}
-.noanim .slide{transition:none;transform:none}
-.noanim .slide.active .card{animation:none!important}
+.noanim .r,.no-rise .r{opacity:1!important;transform:none!important;animation:none!important}
+.noanim .slide,.no-rise .slide{transition:none;transform:none}
+.noanim .slide.active .card,.no-rise .slide.active .card{animation:none!important}
 
 .kicker{font-family:var(--hand);font-size:26px;color:var(--orange);display:flex;align-items:center;gap:12px;margin-bottom:8px;letter-spacing:.04em;flex:none}
 .kicker::before{content:"";width:26px;height:0;border-top:2.5px solid currentColor;transform:rotate(-2deg)}
@@ -410,20 +410,24 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 
 /* ========== MOBILE ========== */
 @media (max-width:900px){
-  html,body{overflow:auto;height:auto;min-height:100%;width:100%}
+  html,body{overflow:auto;height:auto;min-height:100%;width:100%;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
   .stage-bg{position:fixed}
   #stage{
-    position:relative;left:auto;top:auto;width:100vw;height:auto;min-height:100dvh;
+    position:relative;left:auto;top:auto;width:100%;max-width:100vw;height:auto;min-height:100dvh;
     transform:none!important;border:0;box-shadow:none;margin:0;overflow:visible;
   }
   #stage::before{display:none}
   .slide{
     position:relative;inset:auto;width:100%;min-height:100dvh;height:auto;
-    padding:52px 18px 96px;overflow:visible;transform:none;
-    opacity:1;visibility:visible;display:none;
+    padding:52px 18px calc(96px + env(safe-area-inset-bottom));overflow:visible;transform:none!important;
+    opacity:1!important;visibility:visible;display:none;
   }
-  .slide.active{display:flex;transform:none}
+  .slide.active{display:flex;opacity:1!important;visibility:visible;transform:none!important}
   .noanim .slide{transform:none}
+  /* CRITICAL: display:none→flex + rise anim leaves .r at opacity:0 until scroll repaint on iOS */
+  .r,.slide .r,.slide.active .r,.slide.active .card{
+    opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
   .section-num{display:none}
   .h1{font-size:48px}.h2{font-size:32px}.lead{font-size:17px}.big-days{font-size:88px}
   .kicker{font-size:18px;margin-bottom:8px}
@@ -488,6 +492,11 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .slide.fullart-slide{padding:0;overflow:hidden}
 .fullart{position:absolute;inset:0;z-index:0}
 .fullart img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:#0b0b0c}
+@media (max-width:900px){
+  .slide.fullart-slide{overflow:visible;min-height:100dvh;padding:0}
+  .fullart{position:relative;inset:auto;width:100%;min-height:100dvh;display:flex;align-items:center;justify-content:center}
+  .fullart img{width:100%;height:auto;min-height:70dvh;object-fit:contain}
+}
 
 .icon-wall{position:absolute;inset:0;z-index:0}
 .icon-wall img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.72) saturate(1.05)}
@@ -640,7 +649,12 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   <div class="mosaic-bar r" style="--i:0">
     <div>
       <div class="kicker">02 个人经历① · 2022.11 → 2025.7</div>
+      <div class="h2">乱试 · 第一单 · 进场</div>
+    </div>
+    <span class="chip hl">进场期</span>
+  </div>
   <div class="mosaic mosaic-a r" style="--i:1">
+
     <div class="cell"><img src="assets/web/01-autogpt.jpg" alt="AutoGPT 乱试"><span class="cap">23 · 乱试</span></div>
     <div class="cell"><img src="assets/web/02-meta-ad.jpg" alt="Meta 广告实验"></div>
     <div class="cell"><img src="assets/web/03-mubert.jpg" alt="Mubert 音乐"></div>
@@ -652,11 +666,6 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     <div class="cell"><img src="assets/web/09-veo3.jpg" alt="Veo3"></div>
     <div class="cell"><img src="assets/web/10-huang.jpg" alt="黄仁勋相关"></div>
   </div>
-  
-      <div class="h2">乱试 · 第一单 · 进场</div>
-    </div>
-    <span class="chip hl">进场期</span>
-  </div>
 </section>
 
 <!-- 06 个人经历② -->
@@ -664,7 +673,12 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   <div class="mosaic-bar r" style="--i:0">
     <div>
       <div class="kicker">03 个人经历② · 2025.7 → 2026.10</div>
+      <div class="h2">落地 · 舞台 · 大会 · 出海</div>
+    </div>
+    <span class="chip hl">落地期</span>
+  </div>
   <div class="mosaic mosaic-b r" style="--i:1">
+
     <div class="cell"><img src="assets/moments/2026-01-15-manga-first-pay.jpg" alt="漫剧首单"><span class="cap">01.15 · 漫剧首单</span></div>
     <div class="cell"><img src="assets/moments/2026-01-25-aws-opc.jpg" alt="AWS OPC"></div>
     <div class="cell"><img src="assets/moments/2026-01-28-yingke.jpg" alt="映客"></div>
@@ -689,11 +703,6 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     <div class="cell"><img src="assets/moments/2026-09-12-yuri-concert.jpg" alt="Yuri 演唱会"></div>
     <div class="cell"><img src="assets/moments/2026-09-24-yunqi.jpg" alt="云栖大会"><span class="cap">09 · 云栖</span></div>
     <div class="cell"><img src="assets/moments/2026-10-24-kiro-hackathon.jpg" alt="Kiro Hackathon"><span class="cap">10.24 · Kiro</span></div>
-  </div>
-  
-      <div class="h2">落地 · 舞台 · 大会 · 出海</div>
-    </div>
-    <span class="chip hl">落地期</span>
   </div>
 </section>
 
@@ -903,7 +912,12 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   <div class="mosaic-bar r" style="--i:0">
     <div>
       <div class="kicker">05 信息源 · 优质公众号</div>
+      <div class="h2">真人博主 · 可复现干货 · 非水号</div>
+    </div>
+    <span class="chip">现场扫一扫 / 搜同名</span>
+  </div>
   <div class="mosaic mosaic-c r" style="--i:1">
+
     <div class="cell"><img src="assets/sources/wechat/01-canghe.jpg" alt="苍何"><span class="cap hl">苍何</span></div>
     <div class="cell"><img src="assets/sources/wechat/02-karl.jpg" alt="卡尔的AI沃茨"><span class="cap hl">卡尔的AI沃茨</span></div>
     <div class="cell"><img src="assets/sources/wechat/03-saibo.jpg" alt="赛博禅心"><span class="cap hl">赛博禅心</span></div>
@@ -912,11 +926,6 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     <div class="cell"><img src="assets/sources/wechat/06-juai.jpg" alt="橘AI"><span class="cap hl">橘AI</span></div>
     <div class="cell"><img src="assets/sources/wechat/07-zangai.jpg" alt="葬AI"><span class="cap">葬AI</span></div>
     <div class="cell"><img src="assets/sources/wechat/08-yinhai.jpg" alt="AI产品银海"><span class="cap">AI产品银海</span></div>
-  </div>
-  
-      <div class="h2">真人博主 · 可复现干货 · 非水号</div>
-    </div>
-    <span class="chip">现场扫一扫 / 搜同名</span>
   </div>
 </section>
 
@@ -1214,7 +1223,7 @@ lark-cli calendar +agenda --as user</div>
 </div><!-- /stage -->
 
 <div id="hud"><div id="bar"></div></div>
-<div id="pg"><b>1</b> / 14</div>
+<div id="pg"><b>1</b> / 18</div>
 <div id="brand">福秀 · 1427</div>
 <div id="ctrl">
   <button type="button" data-act="prev">←</button>
@@ -1245,16 +1254,17 @@ lark-cli calendar +agenda --as user</div>
   }
   function go(n,instant){
     i=(n+N)%N;
+    if(mq.matches) document.body.classList.add('no-rise');
     if(instant) document.body.classList.add('noanim');
     slides.forEach((s,k)=>s.classList.toggle('active',k===i));
     bar.style.width=((i+1)/N*100)+'%';
     pg.innerHTML='<b>'+(i+1)+'</b> / '+N;
-    location.hash=String(i+1);
+    if(location.hash !== '#'+(i+1)) location.hash=String(i+1);
     if(mq.matches){
-      window.scrollTo({top:0,behavior:instant?'auto':'smooth'});
+      window.scrollTo(0,0);
+      void stage.offsetHeight; /* force paint — iOS otherwise waits for a scroll nudge */
     }
     if(instant){
-      /* two rAFs: ensure layout with noanim, then release so .slide.active .r opacity:1 sticks */
       requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.remove('noanim')));
     }
   }
@@ -1293,19 +1303,28 @@ lark-cli calendar +agenda --as user</div>
     });
   });
 
-  /* touch swipe */
+  /* touch swipe — document so it works when stage height is content-sized on mobile */
   let tx=0,ty=0;
-  stage.addEventListener('touchstart',e=>{
+  document.addEventListener('touchstart',e=>{
     if(!e.changedTouches||!e.changedTouches[0]) return;
     tx=e.changedTouches[0].screenX; ty=e.changedTouches[0].screenY;
   },{passive:true});
-  stage.addEventListener('touchend',e=>{
+  document.addEventListener('touchend',e=>{
     if(!e.changedTouches||!e.changedTouches[0]) return;
     const dx=e.changedTouches[0].screenX-tx;
     const dy=e.changedTouches[0].screenY-ty;
     if(Math.abs(dx)<56||Math.abs(dx)<Math.abs(dy)*1.2) return;
     if(dx<0) next(); else prev();
   },{passive:true});
+
+  /* on mobile keep no-rise from first paint (does not hide #ctrl/#hint) */
+  if(mq.matches) document.body.classList.add('no-rise');
+  const syncRise=ev=>{
+    if(ev.matches) document.body.classList.add('no-rise');
+    else document.body.classList.remove('no-rise');
+  };
+  if(mq.addEventListener) mq.addEventListener('change', syncRise);
+  else if(mq.addListener) mq.addListener(syncRise);
 
   hintTimer=setTimeout(()=>{hint.style.opacity='0'},4200);
   document.addEventListener('keydown',()=>{hint.style.opacity='0';clearTimeout(hintTimer)},{once:true});
