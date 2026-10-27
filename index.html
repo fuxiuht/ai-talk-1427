@@ -75,10 +75,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
 .agenda-grid .card{display:flex;flex-direction:column;justify-content:center;height:100%;min-height:0;padding:22px 22px}
 .agenda-grid .card h4{font-size:34px;margin:4px 0 8px;line-height:1.25;text-wrap:balance}
 .agenda-grid .card p,.card li{font-size:26px;line-height:1.4}
-.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:10px;flex:1;min-height:0;align-items:stretch}
-.contact-grid > div:first-child{display:flex;flex-direction:column;gap:12px;min-height:0}
-.contact-grid > div:first-child .card{flex:1;display:flex;flex-direction:column;justify-content:center}
-.contact-grid .card.orange{height:100%;justify-content:center}
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;margin-top:6px;flex:1;min-height:0;align-items:stretch}
+.contact-grid > div:first-child{display:flex;flex-direction:column;gap:10px;min-height:0;height:100%}
+.contact-grid > div:first-child .card{flex:1.4;display:flex;flex-direction:column;justify-content:center;padding:32px 34px}
+.contact-grid > div:first-child .card .n{font-size:28px;margin-bottom:12px}
+.contact-grid > div:first-child ul.clean li{font-size:34px;margin:18px 0;line-height:1.4;padding-left:34px;color:var(--ink)}
+.contact-grid > div:first-child .card.cream{flex:.7;padding:26px 30px}
+.contact-grid > div:first-child .card.cream p{line-height:1.35}
+.contact-grid .card.orange{height:100%;justify-content:center;padding:28px 24px;gap:8px}
+.contact-grid .card.orange .n{font-size:28px;margin-bottom:6px}
+.contact-grid .qr{width:300px;height:300px;margin:8px 0}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;
   border:1.5px solid var(--line-strong);border-radius:999px;
   background:var(--panel);font-size:22px;color:var(--ink);white-space:nowrap}
@@ -273,19 +279,27 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .path-slide .ent-steps .card p{font-size:17px;line-height:1.35;margin:0}
 
 
-/* Grok Bot · 攻略干货 · 单页 */
-.grok-slide .gb-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:10px;margin-top:6px;flex:1;min-height:0;align-items:stretch}
-.grok-slide .gb-left,.grok-slide .gb-right{display:flex;flex-direction:column;gap:8px;min-height:0;height:100%}
-.grok-slide .gb-left .card,.grok-slide .gb-right .card{padding:14px 16px;flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
-.grok-slide .gb-left .card .n,.grok-slide .gb-right .card .n{font-size:20px}
-.grok-slide .gb-left .card h4,.grok-slide .gb-right .card h4{font-size:28px;margin:2px 0 6px;line-height:1.15}
-.grok-slide .gb-left .card p,.grok-slide .gb-right .card p,
-.grok-slide .gb-left .card li,.grok-slide .gb-right .card li{font-size:20px;line-height:1.35;margin:0}
-.grok-slide .gb-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px;flex:1}
-.grok-slide .gb-steps .card{padding:12px 14px;flex:1;display:flex;flex-direction:column;justify-content:center;height:100%}
-.grok-slide .gb-steps .card h4{font-size:22px;margin:2px 0 4px}
-.grok-slide .gb-steps .card p{font-size:17px;line-height:1.3}
-.grok-slide .gb-foot{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:10px;padding-top:8px;border-top:1px solid var(--line);flex:none}
+/* Grok Bot · 攻略干货 · 单页 + Personal Agent 排行榜 */
+.grok-slide{padding:26px 36px 28px}
+.grok-slide .h2{font-size:36px;margin:0 0 2px}
+.grok-slide .gb-grid{display:grid;grid-template-columns:440px 1fr;gap:14px;margin-top:6px;flex:1;min-height:0;align-items:stretch}
+.grok-slide .gb-rank{display:flex;flex-direction:column;gap:8px;min-height:0;height:100%}
+.grok-slide .gb-rank-frame{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
+  background:#fff;border:1.5px solid var(--line-strong);border-radius:16px;padding:10px;
+  box-shadow:0 18px 48px -24px rgba(0,0,0,.75)}
+.grok-slide .gb-rank-frame img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;display:block;border-radius:8px}
+.grok-slide .gb-rank-cap{font-size:16px;color:var(--mute);line-height:1.35;flex:none;margin:0}
+.grok-slide .gb-rank-cap b{color:var(--orange2);font-weight:700}
+.grok-slide .gb-right{display:flex;flex-direction:column;gap:8px;min-height:0;height:100%}
+.grok-slide .gb-right .card{padding:12px 14px;flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.grok-slide .gb-right .card .n{font-size:18px;margin-bottom:0}
+.grok-slide .gb-right .card h4{font-size:24px;margin:2px 0 4px;line-height:1.15}
+.grok-slide .gb-right .card p,.grok-slide .gb-right .card li{font-size:18px;line-height:1.3;margin:0}
+.grok-slide .gb-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px;flex:none}
+.grok-slide .gb-steps .card{padding:10px 10px;flex:1;display:flex;flex-direction:column;justify-content:center;height:100%}
+.grok-slide .gb-steps .card h4{font-size:18px;margin:1px 0 2px}
+.grok-slide .gb-steps .card p{font-size:14px;line-height:1.25}
+.grok-slide .gb-foot{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:8px;padding-top:6px;border-top:1px solid var(--line);flex:none}
 .grok-slide .gb-foot a{color:var(--mute);font-size:13px;text-decoration:none;border-bottom:1px dashed rgba(217,119,87,.4)}
 .grok-slide .gb-foot a:hover{color:var(--orange2)}
 .grok-slide .gb-foot .src-label{font-family:var(--hand);font-size:15px;color:var(--orange);margin-right:4px}
@@ -471,19 +485,23 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .wall-mini .chip{font-size:14px}
 
 /* AI native phone desktop */
-.phone-desk{display:grid;grid-template-columns:420px 1fr;gap:28px;flex:1;min-height:0;margin-top:8px;align-items:stretch}
+.phone-desk-slide{padding:28px 40px 32px}
+.phone-desk-slide .h2{font-size:44px;margin:0}
+.phone-desk{display:grid;grid-template-columns:380px 1fr;gap:18px;flex:1;min-height:0;margin-top:6px;align-items:stretch}
 .phone-desk .phone-frame{display:flex;align-items:center;justify-content:center;min-height:0;height:100%;
-  background:var(--panel);border:1.5px solid var(--line-strong);border-radius:28px;padding:14px;
+  background:var(--panel);border:1.5px solid var(--line-strong);border-radius:24px;padding:10px;
   box-shadow:0 18px 48px -24px rgba(0,0,0,.75)}
 .phone-desk .phone-frame img{max-height:100%;max-width:100%;width:auto;height:100%;object-fit:contain;
-  border-radius:18px;display:block}
-.phone-desk .side{display:flex;flex-direction:column;gap:12px;min-height:0;height:100%;justify-content:center}
-.phone-desk .side .lead{font-size:28px;line-height:1.4;color:var(--mute);margin:0}
-.phone-desk .side .apps{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:none}
-.phone-desk .side .apps .card{padding:14px 16px}
-.phone-desk .side .apps .card h4{font-size:24px;margin:2px 0 4px}
-.phone-desk .side .apps .card p{font-size:18px;line-height:1.35}
-.phone-desk .side .cap-banner{margin-top:auto;font-size:22px;padding:16px 18px;line-height:1.4}
+  border-radius:16px;display:block}
+.phone-desk .side{display:flex;flex-direction:column;gap:8px;min-height:0;height:100%;justify-content:stretch}
+.phone-desk .side .lead{font-size:22px;line-height:1.35;color:var(--mute);margin:0;flex:none}
+.phone-desk .side .apps{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:8px;flex:1;min-height:0}
+.phone-desk .side .apps .card{padding:12px 14px;height:100%;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.phone-desk .side .apps .card .n{font-size:18px;margin-bottom:0}
+.phone-desk .side .apps .card h4{font-size:26px;margin:2px 0 4px;line-height:1.15}
+.phone-desk .side .apps .card p{font-size:20px;line-height:1.3;margin:0}
+.phone-desk .side .cap-banner{margin-top:0;font-size:20px;padding:12px 16px;line-height:1.35;flex:none}
+.phone-desk .side .row{flex:none}
 
 /* X creators · 9 domains × 1 person · HTML grid (corporate AI learning) */
 .x9-slide .x9-lead{font-size:18px;color:var(--mute);margin:4px 0 0;line-height:1.4;flex:none}
@@ -698,16 +716,19 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .wall-grid.five .wall-cell:last-child{grid-column:1 / -1}
   .wall-grid.six{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,minmax(0,1fr))}
   .wall-grid.three{grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr}
-  .phone-desk{grid-template-columns:110px 1fr;gap:8px;margin-top:4px}
-  .phone-desk .phone-frame{border-radius:12px;padding:4px}
+  .phone-desk-slide{padding:12px 12px 14px}
+  .phone-desk-slide .h2{font-size:18px!important}
+  .phone-desk{grid-template-columns:96px 1fr;gap:6px;margin-top:4px}
+  .phone-desk .phone-frame{border-radius:12px;padding:3px}
   .phone-desk .phone-frame img{border-radius:8px}
-  .phone-desk .side{gap:5px}
-  .phone-desk .side .lead{font-size:12px!important;line-height:1.3}
-  .phone-desk .side .apps{gap:5px}
-  .phone-desk .side .apps .card{padding:6px 7px}
-  .phone-desk .side .apps .card h4{font-size:12px;margin:0 0 2px}
-  .phone-desk .side .apps .card p{font-size:10px;line-height:1.25;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
-  .phone-desk .side .cap-banner{font-size:11px!important;padding:8px 9px!important}
+  .phone-desk .side{gap:4px}
+  .phone-desk .side .lead{font-size:11px!important;line-height:1.25}
+  .phone-desk .side .apps{gap:4px;grid-template-rows:repeat(3,1fr)}
+  .phone-desk .side .apps .card{padding:5px 6px}
+  .phone-desk .side .apps .card .n{font-size:10px}
+  .phone-desk .side .apps .card h4{font-size:12px;margin:0 0 1px}
+  .phone-desk .side .apps .card p{font-size:10px;line-height:1.2;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+  .phone-desk .side .cap-banner{font-size:10px!important;padding:6px 8px!important}
   .wall-cell{border-radius:10px;min-height:0}
   .wall-cell .pic{flex:0 0 34%;min-height:0;max-height:none;height:auto}
   .wall-cell .body{padding:6px 7px 7px;gap:3px}
@@ -732,6 +753,24 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .feishu-dense .outcome-banner{font-size:12px!important;padding:8px 10px!important;line-height:1.35}
   .feishu-dense .cli-code{display:none}
 
+  /* GROK + RANK */
+  .grok-slide{padding:12px 12px 14px}
+  .grok-slide .h2{font-size:16px!important}
+  .grok-slide .gb-grid{grid-template-columns:100px 1fr;gap:6px;margin-top:4px}
+  .grok-slide .gb-rank-frame{padding:3px;border-radius:10px}
+  .grok-slide .gb-rank-cap{font-size:9px;line-height:1.2}
+  .grok-slide .gb-right{gap:4px}
+  .grok-slide .gb-right .card{padding:6px 7px}
+  .grok-slide .gb-right .card .n{font-size:10px}
+  .grok-slide .gb-right .card h4{font-size:12px;margin:0 0 2px}
+  .grok-slide .gb-right .card p{font-size:10px;line-height:1.2}
+  .grok-slide .gb-steps{gap:3px;margin-top:4px}
+  .grok-slide .gb-steps .card{padding:5px 5px}
+  .grok-slide .gb-steps .card h4{font-size:10px}
+  .grok-slide .gb-steps .card p{font-size:9px;display:none}
+  .grok-slide .gb-foot{margin-top:4px;padding-top:4px;gap:4px 8px}
+  .grok-slide .gb-foot a,.grok-slide .gb-foot .src-label,.grok-slide .gb-foot span{font-size:9px}
+
   /* TAKEAWAY */
   .take-grid{grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;flex:1;min-height:0}
   .take-grid > .card,.take-grid > div{min-height:0;height:100%}
@@ -739,10 +778,14 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .take-grid .card h4{font-size:13px}
 
   /* CONTACT */
-  .contact-grid{grid-template-columns:1.15fr .85fr;gap:8px;margin-top:6px;flex:1;min-height:0}
-  .contact-grid > div:first-child{gap:6px}
-  .qr{width:110px;height:110px;padding:5px;border-width:2px;border-radius:10px}
-  .contact-grid .card.orange{padding:12px 10px}
+  .contact-grid{grid-template-columns:1.15fr .85fr;gap:6px;margin-top:4px;flex:1;min-height:0}
+  .contact-grid > div:first-child{gap:5px}
+  .contact-grid > div:first-child .card{padding:10px 10px}
+  .contact-grid > div:first-child .card .n{font-size:12px;margin-bottom:4px}
+  .contact-grid > div:first-child ul.clean li{font-size:12px;margin:5px 0;padding-left:16px;line-height:1.3}
+  .qr{width:118px;height:118px;padding:5px;border-width:2px;border-radius:10px}
+  .contact-grid .card.orange{padding:10px 8px}
+  .contact-grid .card.orange .n{font-size:12px}
 
   /* AGENT (if any) */
   .agent-layout{grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
@@ -1400,40 +1443,50 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 <!-- 11 AI NATIVE PHONE DESKTOP -->
 <section class="slide phone-desk-slide">
   <div class="kicker r">06 工具 · AI native 手机桌面</div>
-  <div class="h2 r" style="--i:1;font-size:40px">随身一屏 · <span class="acc wavy">对话 / 笔记 / 地图 / 记账都在</span></div>
+  <div class="h2 r" style="--i:1">随身一屏 · <span class="acc wavy">每个 AI 各干一件事</span></div>
   <div class="phone-desk r" style="--i:2">
     <div class="phone-frame">
-      <img src="assets/tools/ai-native-phone.jpg" alt="AI native 手机桌面：ChatGPT、微信读书、录音纪要、Grok Bot、高德、flomo、钱迹">
+      <img src="assets/tools/ai-native-phone.jpg" alt="AI native 手机桌面：ChatGPT、Grok Bot、点点、Perplexity、微信读书、录音纪要、高德、flomo、钱迹">
     </div>
     <div class="side">
-      <p class="lead">真实在用的主屏 · 对话助手 · 读书 · 录音纪要 · Grok Bot 小组件 · 地图 · 笔记 · 记账，一屏够日常。</p>
+      <p class="lead">真实主屏 · 对话 / 生活搜 / 执行助手 / 即问即搜，Dock 也放 AI。</p>
       <div class="apps">
         <div class="card orange sm">
-          <div class="n">对话</div>
-          <h4>ChatGPT · Grok Bot</h4>
-          <p>主屏问答 + 小组件随手唤起</p>
+          <div class="n">主屏 · 对话</div>
+          <h4>ChatGPT</h4>
+          <p>深度问答与研究入口 · 主屏一键打开</p>
         </div>
         <div class="card sm">
-          <div class="n">输入 · 纪要</div>
-          <h4>录音纪要 · 微信读书</h4>
-          <p>会议落字 · 阅读进系统</p>
-        </div>
-        <div class="card sm">
-          <div class="n">出行 · 笔记</div>
-          <h4>高德 · flomo</h4>
-          <p>地图导航 · 碎片想法速记</p>
+          <div class="n">小组件 · 执行</div>
+          <h4>Grok Bot</h4>
+          <p>桌面 widget 随手唤起 · 能执行的助手</p>
         </div>
         <div class="card cream sm">
-          <div class="n">账本</div>
-          <h4>钱迹</h4>
-          <p>随身记账 · 少开银行 App</p>
+          <div class="n">Dock · 生活搜</div>
+          <h4>点点</h4>
+          <p>小红书真人经验 · 攻略 / 探店 / 购物决策</p>
+        </div>
+        <div class="card sm">
+          <div class="n">Dock · 即问即搜</div>
+          <h4>Perplexity</h4>
+          <p>带出处的即时检索 · 补全屏对话不够快时</p>
+        </div>
+        <div class="card sm">
+          <div class="n">输入 · 阅读</div>
+          <h4>录音纪要 · 微信读书</h4>
+          <p>会议落字进系统 · 阅读碎片可回捞</p>
+        </div>
+        <div class="card sm">
+          <div class="n">出行 · 笔记 · 账</div>
+          <h4>高德 · flomo · 钱迹</h4>
+          <p>导航 / 速记 / 随身账本 · 少开银行 App</p>
         </div>
       </div>
-      <div class="quote-banner outcome-banner cap-banner">随身一屏 · 对话 / 笔记 / 地图 / 记账都在 · Dock 留常用入口</div>
+      <div class="quote-banner outcome-banner cap-banner">主屏放对话与执行 · Dock 放 点点 / Perplexity · 一屏够日常</div>
       <div class="row" style="gap:8px;flex-wrap:wrap">
         <span class="chip hl">AI native 主屏</span>
-        <span class="chip">ChatGPT · 微信读书 · 录音纪要</span>
-        <span class="chip cream">Grok Bot widget · 高德 · flomo · 钱迹</span>
+        <span class="chip">ChatGPT · Grok Bot</span>
+        <span class="chip cream">点点 · Perplexity · Dock</span>
       </div>
     </div>
   </div>
@@ -1524,38 +1577,36 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 
 
 
-<!-- 13a GROK BOT · 攻略干货 · 单独一页 -->
+<!-- 13a GROK BOT · 攻略干货 · 单独一页 + Personal Agent 排行榜 -->
 <section class="slide grok-slide">
   <div class="kicker r">Grok Bot · 攻略干货 · 请拍照</div>
-  <div class="h2 r" style="--i:1;font-size:36px;margin-bottom:2px">带云电脑的 Personal Agent · <span class="acc">≠ 聊天 Grok</span></div>
+  <div class="h2 r" style="--i:1">带云电脑的 Personal Agent · <span class="acc wavy">Grok Bot #1 夯</span></div>
   <div class="gb-grid r" style="--i:2">
-    <div class="gb-left">
+    <div class="gb-rank">
+      <div class="gb-rank-frame">
+        <img src="assets/personal-agent-rank.jpg" alt="个人 Agent: 从夯到拉 · Grok Bot 夯 · @ding_liam">
+      </div>
+      <p class="gb-rank-cap">排行榜 · <b>@ding_liam</b>「个人 Agent: 从夯到拉」· Grok Bot 独一档 · 夯</p>
+    </div>
+    <div class="gb-right">
       <div class="card orange">
-        <div class="n">① 是什么</div>
+        <div class="n">① 是什么 · ≠ 聊天 Grok</div>
         <h4>带电脑的打工人 · 文件 / 浏览器 / 连接器 / Skill / 定时</h4>
         <p>能执行、能协作、有记忆与多 Bot。企业：一人一助手；跨人协作接 Friends；权限边界守住。</p>
       </div>
       <div class="card">
-        <div class="n">② 四步路径 · @cgnot996 铁柱AGI</div>
-        <h4>别一上来搭流水线 · 像带实习生</h4>
+        <div class="n">② 四步路径 · @cgnot996 铁柱AGI · 像带实习生</div>
         <div class="gb-steps">
-          <div class="card sm orange"><div class="n">①</div><h4>跑通任务</h4><p>边界清晰 · 看它怎么调用工具</p></div>
-          <div class="card sm"><div class="n">②</div><h4>磨合调整</h4><p>权限边界 · 沟通习惯磨顺</p></div>
-          <div class="card sm"><div class="n">③</div><h4>固定触发器</h4><p>做顺的事 · 定时 / 事件跑</p></div>
-          <div class="card sm cream"><div class="n">④</div><h4>组建团队</h4><p>专职多 Bot · 主 Bot 派活</p></div>
+          <div class="card sm orange"><div class="n">①</div><h4>跑通任务</h4><p>边界清晰 · 看工具调用</p></div>
+          <div class="card sm"><div class="n">②</div><h4>磨合调整</h4><p>权限 · 沟通磨顺</p></div>
+          <div class="card sm"><div class="n">③</div><h4>固定触发器</h4><p>定时 / 事件跑</p></div>
+          <div class="card sm cream"><div class="n">④</div><h4>组建团队</h4><p>多 Bot · 主 Bot 派活</p></div>
         </div>
       </div>
-    </div>
-    <div class="gb-right">
       <div class="card">
-        <div class="n">金句 · @AIPMAndy AI酋长</div>
-        <h4>Bot → Skill → Routine</h4>
-        <p>危险动作要审批；别只看 Done；最小授权 · 交付必须能核对来源与文件。</p>
-      </div>
-      <div class="card orange">
-        <div class="n">实操 · @miles_mazy Miles Ma</div>
-        <h4>一事一 Bot · 给材料 + 验收标准</h4>
-        <p>闲鱼上架 / 小红书图卡 / 工具简报 / 短视频 / 整理收藏 —— 每案各建一个 Bot。</p>
+        <div class="n">金句 · @AIPMAndy · 实操 · @miles_mazy</div>
+        <h4>Bot → Skill → Routine · 一事一 Bot</h4>
+        <p>危险动作要审批；最小授权 · 交付可核对。闲鱼 / 小红书 / 简报 / 短视频 —— 每案各建一个 Bot。</p>
       </div>
       <div class="card cream">
         <div class="n">订阅避坑 · 企业落地</div>
@@ -1565,15 +1616,16 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     </div>
   </div>
   <div class="gb-foot r" style="--i:3">
-    <span class="src-label">三份攻略</span>
+    <span class="src-label">来源</span>
+    <span style="color:var(--orange2);font-size:14px">排行榜 @ding_liam</span>
     <a href="https://bot.fmcat.top" target="_blank" rel="noopener">① bot.fmcat.top · @cgnot996</a>
-    <a href="https://aipmandy.github.io/grok-bot-handbook/" target="_blank" rel="noopener">② aipmandy.github.io/grok-bot-handbook · @AIPMAndy</a>
-    <a href="https://immilesma.com/blog/grok-bot-practical-guide/" target="_blank" rel="noopener">③ immilesma.com · @miles_mazy</a>
+    <a href="https://aipmandy.github.io/grok-bot-handbook/" target="_blank" rel="noopener">② handbook · @AIPMAndy</a>
+    <a href="https://immilesma.com/blog/grok-bot-practical-guide/" target="_blank" rel="noopener">③ 实操 · @miles_mazy</a>
   </div>
-  <div class="row r mt-auto" style="--i:4;gap:8px;flex-wrap:wrap">
+  <div class="row r" style="--i:4;gap:8px;flex-wrap:wrap;flex:none;margin-top:6px">
     <span class="chip hl">这份课件是用 Grok Bot 做的</span>
-    <span class="chip cream">来源 X · status/2112761781080965416 · 手册站 · 实操案例</span>
-    <span class="chip">下一页 · Yobiru Friends 跨人协作</span>
+    <span class="chip cream">@ding_liam · 从夯到拉 · Grok Bot #1</span>
+    <span class="chip">下一页 · Yobiru Friends</span>
   </div>
 </section>
 
@@ -1632,29 +1684,29 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 </section>
 
 <!-- 14 CONTACT -->
-<section class="slide">
+<section class="slide" style="padding:28px 40px 32px">
   <div class="kicker r">Contact · 感谢 · 答疑 +30′</div>
-  <div class="h2 r" style="--i:1">带走 · 再约</div>
+  <div class="h2 r" style="--i:1;font-size:56px;margin:0">带走 · 再约</div>
   <div class="contact-grid r" style="--i:2">
     <div>
       <div class="card">
-        <div class="n">OPEN · 可聊</div>
+        <div class="n">OPEN · 可聊 · 答疑现场直接开</div>
         <ul class="clean">
           <li>团队卡在「不会用」还是「用不进流程」？</li>
           <li>信息源你们现在靠什么过滤？</li>
           <li>有没有一条想下周就试的工作流？</li>
         </ul>
       </div>
-      <div class="card cream" style="padding:18px 22px">
-        <p style="font-size:22px;color:var(--ink);margin:0">感谢 · 2026.10.27 · 咨询公司现场</p>
-        <p style="font-size:17px;color:var(--mute);margin-top:8px">与 AI 同行 1427 天 · 60′讲 + 30′答疑 · ←→ / 空格 / 滑动 · F 全屏</p>
+      <div class="card cream">
+        <p style="font-size:32px;color:var(--ink);margin:0;font-weight:700">感谢 · 2026.10.27 · 咨询公司现场</p>
+        <p style="font-size:24px;color:var(--mute);margin-top:12px">与 AI 同行 1427 天 · 60′讲 + 30′答疑 · ←→ / 空格 / 滑动 · F 全屏</p>
       </div>
     </div>
-    <div class="card orange" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 24px">
+    <div class="card orange" style="display:flex;flex-direction:column;align-items:center;text-align:center">
       <div class="n">福秀 · 上海徐汇</div>
-      <img class="qr" src="assets/web/wechat-qr.png" alt="微信二维码 福秀" style="margin:14px 0">
-      <div style="font-family:var(--hand);font-size:28px;color:var(--orange2)">微信 fuxiuDSG</div>
-      <p style="font-size:17px;margin-top:6px">扫码添加 · 继续聊</p>
+      <img class="qr" src="assets/web/wechat-qr.png" alt="微信二维码 福秀">
+      <div style="font-family:var(--hand);font-size:36px;color:var(--orange2);line-height:1.2">微信 fuxiuDSG</div>
+      <p style="font-size:24px;margin-top:8px;color:var(--mute)">扫码添加 · 继续聊</p>
     </div>
   </div>
 </section>
@@ -1662,7 +1714,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 </div><!-- /stage -->
 
 <div id="hud"><div id="bar"></div></div>
-<div id="pg"><b>1</b> / 18</div>
+<div id="pg"><b>1</b> / 19</div>
 <div id="brand">福秀 · 1427</div>
 <div id="ctrl">
   <button type="button" data-act="prev">←</button>
