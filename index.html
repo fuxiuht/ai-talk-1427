@@ -211,8 +211,8 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .ov-thumb{width:56px;height:56px;border-radius:10px;object-fit:cover;border:1.5px solid rgba(255,106,26,.35);flex:none}
 .cat-block .thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:12px}
 .src-card .use{font-size:15px;color:var(--orange2);margin-top:8px;line-height:1.35}
-.check-xl{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px;flex:1;align-content:start}
-.check-xl .card{padding:26px 28px;min-height:140px}
+.check-xl{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px;margin-top:12px;flex:1;min-height:0}
+.check-xl .card{padding:28px 30px;min-height:0;height:100%;display:flex;align-items:flex-start}
 .check-xl .card h4{font-size:32px;margin:4px 0 10px}
 .check-xl .card p{font-size:22px}
 .quote-banner{margin-top:18px;padding:20px 28px;border-radius:14px;
@@ -222,12 +222,12 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .take-grid .card h4{font-size:24px}
 
 /* ABOUT · clean identity */
-.about-layout{display:grid;grid-template-columns:260px 1fr;gap:40px;flex:1;min-height:0;margin-top:16px;align-items:start}
+.about-layout{display:grid;grid-template-columns:260px 1fr;gap:40px;flex:1;min-height:0;margin-top:12px;align-items:stretch}
 .about-left{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .about-left .name{font-family:var(--hand);font-size:64px;line-height:1;color:var(--ink)}
 .about-left .one-liner{font-size:18px;line-height:1.5;color:var(--mute);max-width:240px}
-.id-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-content:start;width:100%}
-.id-grid .card{padding:16px 18px;margin:0}
+.id-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,1fr);gap:14px;align-content:stretch;width:100%;height:100%;flex:1;min-height:0}
+.id-grid .card{padding:20px 22px;margin:0;display:flex;flex-direction:column;justify-content:center;height:100%}
 .id-grid .card .n{font-size:13px;letter-spacing:.06em;margin-bottom:6px}
 .id-grid .card h4{font-size:20px;margin:0;line-height:1.35}
 .id-grid .card p{display:none}
@@ -246,14 +246,17 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .agent-chip:hover,.agent-chip:active{transform:scale(1.04);border-color:var(--orange)}
 .agent-chip.soft{font-size:18px;padding:10px 16px;border-color:var(--line-strong);background:var(--panel);font-weight:500;color:var(--cream)}
 
-/* Book deep */
-.book-deep{display:grid;grid-template-columns:240px 1fr;gap:28px;flex:1;min-height:0;margin-top:14px;align-items:stretch}
-.book-deep .cover-col{display:flex;flex-direction:column;align-items:center;gap:10px}
-.book-deep .cover-col img{width:220px;height:auto;border-radius:8px;border:2px solid rgba(255,106,26,.4);
+/* Book deep — fill the stage */
+.book-deep{display:grid;grid-template-columns:260px 1fr;gap:22px;flex:1;min-height:0;margin-top:10px;align-items:stretch}
+.book-deep .cover-col{display:flex;flex-direction:column;align-items:center;gap:10px;min-height:0;height:100%}
+.book-deep .cover-col img{width:100%;flex:1;min-height:0;object-fit:cover;object-position:top;border-radius:10px;border:2px solid rgba(255,106,26,.4);
   box-shadow:0 20px 50px -20px rgba(255,106,26,.4)}
-.book-takes{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
-.book-takes .card h4{font-size:22px;margin:2px 0 6px}
-.book-takes .card p{font-size:17px;line-height:1.45}
+.book-deep .cover-col p{margin:0;flex:none}
+.book-takes{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:100%;min-height:0}
+.book-takes .card{display:flex;flex-direction:column;justify-content:center;padding:22px 24px;min-height:0;height:100%}
+.book-takes .card h4{font-size:26px;margin:4px 0 10px}
+.book-takes .card p{font-size:18px;line-height:1.5}
+.quote-banner.mt-auto{margin-top:auto}
 
 /* Sources institutions */
 .src-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;flex:1;align-content:start}
@@ -562,7 +565,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 <!-- 07 BOOK DEEP · one meaty page -->
 <section class="slide">
   <div class="kicker r">04 信息差·书 · 单独深读</div>
-  <div class="h2 r" style="--i:1;font-size:38px">《知识的边界》· Too Big to Know · 戴维·温伯格</div>
+  <div class="h2 r" style="--i:1;font-size:34px;margin-bottom:4px">《知识的边界》· Too Big to Know · 戴维·温伯格</div>
   <div class="book-deep r" style="--i:2">
     <div class="cover-col">
       <img src="assets/web/book-too-big-to-know.png" alt="《知识的边界》">
@@ -591,7 +594,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
       </div>
     </div>
   </div>
-  <div class="quote-banner r" style="--i:3;margin-top:12px;font-size:22px;padding:14px 22px">可引用：过滤器比库存更重要 · 先养信息感 · 再堆工具</div>
+  <div class="quote-banner mt-auto r" style="--i:3;font-size:24px;padding:18px 26px">可引用：过滤器比库存更重要 · 先养信息感 · 再堆工具</div>
 </section>
 
 <!-- 08 CHECKLIST photo page -->
