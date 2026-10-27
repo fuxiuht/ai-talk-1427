@@ -62,7 +62,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
 .kicker::before{content:"";width:26px;height:0;border-top:2.5px solid currentColor;transform:rotate(-2deg)}
 .h1{font-family:var(--hand);font-weight:400;font-size:92px;line-height:1.05;color:var(--ink);letter-spacing:.01em;text-wrap:balance}
 .h2{font-family:var(--hand);font-weight:400;font-size:56px;line-height:1.12;color:var(--ink);text-wrap:balance}
-.lead{font-size:28px;line-height:1.5;color:var(--mute);max-width:100%}
+.lead{font-size:30px;line-height:1.5;color:var(--mute);max-width:100%}
 .mute{color:var(--mute)}.acc{color:var(--orange)}
 .wavy{text-decoration:underline;text-decoration-style:wavy;text-decoration-color:var(--orange);text-underline-offset:6px}
 .mark{background:linear-gradient(transparent 62%,rgba(217,119,87,.35) 62%);padding:0 .06em}
@@ -73,8 +73,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
 .fill-grid{flex:1;min-height:0;margin-top:12px;align-content:stretch}
 .agenda-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:14px;margin-top:14px;flex:1;min-height:0}
 .agenda-grid .card{display:flex;flex-direction:column;justify-content:center;height:100%;min-height:0;padding:28px 26px}
-.agenda-grid .card h4{font-size:30px;margin:6px 0 10px;line-height:1.25;text-wrap:balance}
-.agenda-grid .card p,.card li{font-size:22px;line-height:1.45}
+.agenda-grid .card h4{font-size:32px;margin:6px 0 10px;line-height:1.25;text-wrap:balance}
+.agenda-grid .card p,.card li{font-size:24px;line-height:1.45}
 .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;margin-top:16px;flex:1;min-height:0;align-items:stretch}
 .contact-grid > div:first-child{display:flex;flex-direction:column;gap:14px;min-height:0}
 .contact-grid > div:first-child .card{flex:1;display:flex;flex-direction:column;justify-content:center}
@@ -92,11 +92,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
 .card.orange{border-color:rgba(217,119,87,.45);background:linear-gradient(160deg,rgba(217,119,87,.12),var(--panel))}
 .card.cream{border-color:rgba(240,230,216,.25);background:linear-gradient(160deg,rgba(240,230,216,.06),var(--panel))}
 .card .n{font-family:var(--hand);font-size:20px;color:var(--orange);margin-bottom:4px}
-.card h4{font-size:26px;font-weight:700;margin:4px 0 8px;line-height:1.3}
-.card p,.card li{font-size:20px;line-height:1.5;color:var(--mute)}
+.card h4{font-size:28px;font-weight:700;margin:4px 0 8px;line-height:1.3}
+.card p,.card li{font-size:22px;line-height:1.5;color:var(--mute)}
 .card.sm{padding:14px 16px}
-.card.sm h4{font-size:20px;margin:2px 0 4px}
-.card.sm p{font-size:15px;line-height:1.4}
+.card.sm h4{font-size:22px;margin:2px 0 4px}
+.card.sm p{font-size:17px;line-height:1.45}
 
 .section-num{font-family:var(--hand);font-size:380px;line-height:.8;position:absolute;right:50px;bottom:-50px;
   color:rgba(217,119,87,.08);pointer-events:none}
@@ -129,7 +129,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
   font-size:20px;color:var(--orange);font-family:var(--hand)}
 
 ul.clean{list-style:none}
-ul.clean li{position:relative;padding-left:26px;margin:8px 0;font-size:20px;line-height:1.5;color:var(--mute)}
+ul.clean li{position:relative;padding-left:26px;margin:8px 0;font-size:22px;line-height:1.5;color:var(--mute)}
 ul.clean li::before{content:"▸";position:absolute;left:0;top:0;color:var(--orange);font-size:16px}
 
 .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
@@ -182,11 +182,11 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .mosaic .cell img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;
   filter:brightness(1.12) contrast(1.06) saturate(1.05)}
 .mosaic .hero{grid-column:span 2;grid-row:span 2}
-.mosaic .cap{position:absolute;left:8px;bottom:8px;z-index:2;font-family:var(--hand);font-size:14px;
+.mosaic .cap{position:absolute;left:8px;bottom:8px;z-index:2;font-family:var(--hand);font-size:16px;
   background:rgba(11,11,12,.88);color:var(--cream);padding:3px 9px;border-radius:6px;
   border:1px solid rgba(217,119,87,.45);pointer-events:none;line-height:1.2;
   text-shadow:0 1px 2px rgba(0,0,0,.6)}
-.mosaic .cap.hl{background:var(--orange);color:#111;border-color:transparent;font-size:15px;text-shadow:none}
+.mosaic .cap.hl{background:var(--orange);color:#111;border-color:transparent;font-size:17px;text-shadow:none}
 .mosaic-a{grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
 .mosaic-b{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,minmax(0,1fr))}
 .mosaic-c{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
@@ -202,7 +202,8 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .mosaic-bar .h2{font-size:26px;line-height:1.15;margin:0;color:var(--ink)}
 .mosaic-bar .chip{font-size:15px;padding:5px 12px}
 /* mosaics: always visible — skip rise anim (mobile was blank-ish) */
-.slide.mosaic-slide .r,.slide.mosaic-slide.active .r{
+/* only ACTIVE mosaic: skip rise anim (inactive must stay opacity:0) */
+.slide.mosaic-slide.active .r{
   opacity:1!important;transform:none!important;animation:none!important}
 
 /* illustrated tool cards */
@@ -364,17 +365,17 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .cover-left .h1{font-size:84px;margin-top:8px}
 .cover-left .big-days{font-size:160px}
 .cover-left .days-unit{font-family:var(--hand);font-size:56px;margin-left:12px;vertical-align:super;color:var(--orange2)}
-.cover-left .lead{margin-top:18px;font-size:26px;max-width:36ch}
+.cover-left .lead{margin-top:18px;font-size:28px;max-width:38ch}
 .cover-bio{background:var(--panel);border:1.5px solid var(--line-strong);border-radius:18px;padding:22px 24px 20px;
   display:flex;flex-direction:column;min-height:0;height:100%;box-shadow:0 18px 40px -24px rgba(0,0,0,.7)}
 .cover-bio .bio-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .cover-bio .bio-head img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid rgba(217,119,87,.55);flex-shrink:0}
 .cover-bio .bio-head .who{font-family:var(--hand);font-size:36px;line-height:1;color:var(--ink)}
 .cover-bio .bio-head .wx{font-size:16px;color:var(--mute);margin-top:6px}
-.cover-bio .bio-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;flex:1;min-height:0;justify-content:space-evenly}
-.cover-bio .bio-list li{display:grid;grid-template-columns:10px 1fr;gap:12px;align-items:start;font-size:18px;line-height:1.35;color:var(--cream)}
+.cover-bio .bio-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;flex:1;min-height:0;justify-content:space-evenly}
+.cover-bio .bio-list li{display:grid;grid-template-columns:10px 1fr;gap:12px;align-items:start;font-size:22px;line-height:1.4;color:var(--cream)}
 .cover-bio .bio-list li::before{content:"";width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 3px rgba(217,119,87,.22)}
-.cover-bio .bio-list .tag{display:inline-block;font-family:var(--hand);font-size:14px;color:var(--orange);margin-right:6px}
+.cover-bio .bio-list .tag{display:inline-block;font-family:var(--hand);font-size:17px;color:var(--orange);margin-right:6px}
 
 /* ABOUT · clean identity */
 .about-layout{display:grid;grid-template-columns:260px 1fr;gap:36px;flex:1;min-height:0;margin-top:8px;align-items:stretch}
@@ -403,16 +404,16 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .agent-chip:hover,.agent-chip:active{transform:scale(1.04);border-color:var(--orange)}
 .agent-chip.soft{font-size:18px;padding:10px 16px;border-color:var(--line-strong);background:var(--panel);font-weight:500;color:var(--cream)}
 
-/* Book deep — fill the stage */
-.book-deep{display:grid;grid-template-columns:260px 1fr;gap:22px;flex:1;min-height:0;margin-top:10px;align-items:stretch}
-.book-deep .cover-col{display:flex;flex-direction:column;align-items:center;gap:10px;min-height:0;height:100%}
-.book-deep .cover-col img{width:100%;flex:1;min-height:0;object-fit:cover;object-position:top;border-radius:10px;border:2px solid rgba(217,119,87,.4);
-  box-shadow:0 20px 50px -20px rgba(217,119,87,.4)}
-.book-deep .cover-col p{margin:0;flex:none}
+/* Book deep — full cover visible, no heavy crop */
+.book-deep{display:grid;grid-template-columns:400px 1fr;gap:28px;flex:1;min-height:0;margin-top:10px;align-items:stretch}
+.book-deep .cover-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:0;height:100%;background:var(--panel);border:1.5px solid var(--line-strong);border-radius:16px;padding:16px 18px 14px}
+.book-deep .cover-col img{width:100%;flex:1;min-height:0;height:100%;object-fit:contain;object-position:center;border-radius:8px;border:0;
+  box-shadow:0 16px 40px -18px rgba(0,0,0,.65);background:#0e3d3a}
+.book-deep .cover-col p{margin:0;flex:none;font-size:18px}
 .book-takes{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:100%;min-height:0}
 .book-takes .card{display:flex;flex-direction:column;justify-content:center;padding:22px 24px;min-height:0;height:100%}
-.book-takes .card h4{font-size:26px;margin:4px 0 10px}
-.book-takes .card p{font-size:18px;line-height:1.5}
+.book-takes .card h4{font-size:28px;margin:4px 0 10px}
+.book-takes .card p{font-size:20px;line-height:1.5}
 /* Sources institutions */
 .src-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px;flex:1;min-height:0;align-content:stretch}
 .src-grid.primary{grid-template-rows:repeat(3,1fr);grid-auto-rows:1fr}
@@ -454,20 +455,20 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .wall-mini{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
 .wall-mini .chip{font-size:14px}
 
-/* Feishu dense */
-.feishu-dense{display:grid;grid-template-columns:320px 1fr;gap:20px;flex:1;min-height:0;margin-top:8px;align-items:stretch}
-.feishu-dense .hero-img{width:100%;height:100%;object-fit:cover;border-radius:16px;border:2px solid rgba(217,119,87,.4);
-  box-shadow:0 20px 50px -20px rgba(217,119,87,.35);background:var(--panel2);min-height:0}
-.feishu-dense .feats{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr auto;gap:10px;flex:1;min-height:0;align-content:stretch}
-.feishu-dense .feats .card{padding:16px 18px;height:100%;display:flex;flex-direction:column;justify-content:center;min-height:0}
-.feishu-dense .feats .card h4{font-size:19px;margin:2px 0 6px}
-.feishu-dense .feats .card p,.feishu-dense .feats .card li{font-size:15px;line-height:1.4}
-.feishu-dense .cli-code{font-size:13px;padding:12px 14px;flex:none}
-.feishu-dense > div{display:flex;flex-direction:column;gap:10px;min-height:0;height:100%}
+/* Feishu dense · consulting outcomes (no geek CLI pane) */
+.feishu-dense{display:grid;grid-template-columns:1fr;gap:12px;flex:1;min-height:0;margin-top:8px;align-items:stretch}
+.feishu-dense .hero-img{display:none}
+.feishu-dense .feats{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr auto;gap:12px;flex:1;min-height:0;align-content:stretch}
+.feishu-dense .feats .card{padding:18px 22px;height:100%;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.feishu-dense .feats .card h4{font-size:24px;margin:2px 0 8px}
+.feishu-dense .feats .card p,.feishu-dense .feats .card li{font-size:19px;line-height:1.45}
+.feishu-dense .cli-code{display:none}
+.feishu-dense > div{display:flex;flex-direction:column;gap:12px;min-height:0;height:100%}
 .feishu-dense .row{margin-top:auto}
+.feishu-dense .outcome-banner{flex:none}
 
 /* Cover denser */
-.slide[data-t="cover"] .lead{font-size:26px;line-height:1.55;margin-top:20px!important}
+.slide[data-t="cover"] .lead{font-size:28px;line-height:1.55;margin-top:20px!important}
 .slide[data-t="cover"] .big-days + span{font-size:72px!important}
 .slide[data-t="cover"] .row.mt-auto{padding-bottom:4px}
 
@@ -517,24 +518,24 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .section-num{display:none}
 
   /* type / chrome denser */
-  .kicker{font-size:12px;margin-bottom:2px;gap:6px}
+  .kicker{font-size:13px;margin-bottom:2px;gap:6px}
   .kicker::before{width:14px}
   .h1{font-size:28px;line-height:1.05}
-  .h2{font-size:20px!important;line-height:1.15}
-  .lead{font-size:12px!important;line-height:1.35}
+  .h2{font-size:22px!important;line-height:1.15}
+  .lead{font-size:14px!important;line-height:1.4}
   .big-days{font-size:56px}
   .card{padding:8px 10px;border-radius:10px}
-  .card h4{font-size:13px;margin:2px 0 4px;line-height:1.25}
-  .card p,.card li{font-size:11px;line-height:1.3}
+  .card h4{font-size:15px;margin:2px 0 4px;line-height:1.25}
+  .card p,.card li{font-size:13px;line-height:1.35}
   .card.sm{padding:6px 8px}
-  .card.sm h4{font-size:12px}
-  .card.sm p{font-size:10px}
+  .card.sm h4{font-size:14px}
+  .card.sm p{font-size:12px}
   .chip{font-size:10px;padding:3px 8px;gap:4px}
   .num-badge{width:26px;height:26px;font-size:13px}
   .quote-banner{font-size:12px!important;padding:8px 10px!important;margin-top:6px;border-radius:10px;line-height:1.3}
   .row{gap:6px;flex-wrap:wrap}
   .src{position:absolute;left:10px;bottom:8px;margin:0;font-size:9px;max-width:70%;line-height:1.2;z-index:4}
-  ul.clean li{font-size:11px;line-height:1.3;margin:3px 0;padding-left:16px}
+  ul.clean li{font-size:13px;line-height:1.35;margin:3px 0;padding-left:16px}
   ul.clean li::before{font-size:11px}
 
   /* COVER */
@@ -543,19 +544,19 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .cover-left .h1{font-size:26px;margin-top:2px}
   .cover-left .big-days{font-size:52px}
   .cover-left .days-unit{font-size:22px;margin-left:6px}
-  .cover-left .lead{margin-top:4px;font-size:11px;max-width:none}
-  .cover-left .lead span[style]{font-size:10px!important}
-  .slide[data-t="cover"] .lead{font-size:11px;line-height:1.35;margin-top:4px!important}
+  .cover-left .lead{margin-top:4px;font-size:13px;max-width:none}
+  .cover-left .lead span[style]{font-size:12px!important}
+  .slide[data-t="cover"] .lead{font-size:13px;line-height:1.4;margin-top:4px!important}
   .slide[data-t="cover"] .big-days + span{font-size:22px!important}
   .cover-bio{padding:8px 10px;border-radius:12px;min-height:0;overflow:hidden}
   .cover-bio .bio-head{gap:8px;margin-bottom:6px;padding-bottom:6px}
   .cover-bio .bio-head img{width:40px;height:40px}
-  .cover-bio .bio-head .who{font-size:20px}
-  .cover-bio .bio-head .wx{font-size:10px;margin-top:2px}
-  .cover-bio .bio-list{gap:3px;justify-content:flex-start}
-  .cover-bio .bio-list li{font-size:10px;line-height:1.25;gap:8px}
+  .cover-bio .bio-head .who{font-size:22px}
+  .cover-bio .bio-head .wx{font-size:12px;margin-top:2px}
+  .cover-bio .bio-list{gap:4px;justify-content:flex-start}
+  .cover-bio .bio-list li{font-size:13px;line-height:1.3;gap:8px}
   .cover-bio .bio-list li::before{width:5px;height:5px;margin-top:5px;box-shadow:0 0 0 2px rgba(217,119,87,.22)}
-  .cover-bio .bio-list .tag{font-size:10px;margin-right:4px}
+  .cover-bio .bio-list .tag{font-size:12px;margin-right:4px}
 
   /* ABOUT */
   .about-layout{grid-template-columns:72px 1fr;gap:8px;margin-top:4px;flex:1;min-height:0}
@@ -572,8 +573,8 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   /* AGENDA · keep 2×3 denser */
   .agenda-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:6px;margin-top:6px;flex:1;min-height:0}
   .agenda-grid .card{height:100%;min-height:0;padding:8px 10px;justify-content:center}
-  .agenda-grid .card h4{font-size:13px;margin:2px 0 4px}
-  .agenda-grid .card p{font-size:10px;line-height:1.3}
+  .agenda-grid .card h4{font-size:15px;margin:2px 0 4px}
+  .agenda-grid .card p{font-size:12px;line-height:1.35}
   .agenda-grid .card .n{font-size:11px;margin-bottom:0}
 
   /* MOSAICS · fill leftover height, no aspect-ratio growth */
@@ -585,28 +586,28 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .mosaic{flex:1;min-height:0;height:auto;gap:3px;align-content:stretch}
   .mosaic .cell{min-height:0;aspect-ratio:unset;border-radius:6px;border-width:1px}
   .mosaic .cell img{filter:brightness(1.15) contrast(1.08)}
-  .mosaic .cap{font-size:9px;left:3px;bottom:3px;padding:1px 5px;border-radius:4px}
-  .mosaic .cap.hl{font-size:10px}
+  .mosaic .cap{font-size:11px;left:3px;bottom:3px;padding:2px 6px;border-radius:4px;line-height:1.25;max-width:96%}
+  .mosaic .cap.hl{font-size:12px}
   .mosaic-a{grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
   .mosaic-b{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,minmax(0,1fr))}
   .mosaic-c{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
   .mosaic .hero{grid-column:span 2;grid-row:span 2;min-height:0}
 
-  /* BOOK */
-  .book-deep{grid-template-columns:72px 1fr;gap:8px;margin-top:4px;flex:1;min-height:0}
-  .book-deep .cover-col{gap:4px}
-  .book-deep .cover-col img{width:72px;flex:1;min-height:0;border-radius:6px;border-width:1.5px}
-  .book-deep .cover-col p{font-size:9px!important;line-height:1.2}
+  /* BOOK · full cover visible */
+  .book-deep{grid-template-columns:130px 1fr;gap:10px;margin-top:4px;flex:1;min-height:0}
+  .book-deep .cover-col{gap:4px;justify-content:center;align-items:center}
+  .book-deep .cover-col img{width:auto;max-width:130px;height:auto;max-height:100%;flex:none;object-fit:contain;object-position:center;border-radius:8px;border-width:1.5px;background:var(--panel2)}
+  .book-deep .cover-col p{font-size:11px!important;line-height:1.25}
   .book-takes{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px}
   .book-takes .card{padding:8px 9px}
-  .book-takes .card h4{font-size:12px;margin:2px 0 4px}
-  .book-takes .card p{font-size:10px;line-height:1.3}
+  .book-takes .card h4{font-size:14px;margin:2px 0 4px}
+  .book-takes .card p{font-size:12px;line-height:1.35}
 
   /* CHECKLIST · keep 2×2 */
   .check-xl{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;margin-top:6px;flex:1;min-height:0}
   .check-xl .card{min-height:0;padding:10px 10px;gap:8px!important}
-  .check-xl .card h4{font-size:14px;margin:0 0 4px}
-  .check-xl .card p{font-size:11px;line-height:1.3}
+  .check-xl .card h4{font-size:16px;margin:0 0 4px}
+  .check-xl .card p{font-size:13px;line-height:1.35}
 
   /* SOURCES */
   .src-grid{grid-template-columns:1fr 1fr;gap:5px;margin-top:4px}
@@ -641,17 +642,17 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .wall-mini{gap:4px;padding-top:4px;margin-top:4px;flex:none}
   .wall-mini .chip{font-size:9px;padding:2px 6px}
 
-  /* FEISHU */
-  .feishu-dense{grid-template-columns:88px 1fr;gap:8px;margin-top:4px;flex:1;min-height:0}
-  .feishu-dense .hero-img{max-height:none;height:100%;min-height:0;border-radius:10px;border-width:1.5px}
+  /* FEISHU · consulting outcomes, readable */
+  .feishu-dense{grid-template-columns:1fr;gap:6px;margin-top:4px;flex:1;min-height:0}
+  .feishu-dense .hero-img{display:none}
   .feishu-dense > div{gap:5px;min-height:0}
-  .feishu-dense .lead{font-size:10px!important}
-  .feishu-dense .feats{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr auto;gap:4px;flex:1;min-height:0}
-  .feishu-dense .feats .card{padding:6px 7px}
-  .feishu-dense .feats .card h4{font-size:11px;margin:1px 0 2px}
-  .feishu-dense .feats .card p,.feishu-dense .feats .card li{font-size:9px;line-height:1.25}
-  .feishu-dense .cli-code{font-size:9px;padding:6px 7px;line-height:1.35;border-radius:8px;flex:none;max-height:22%;overflow:hidden}
-  .feishu-dense .cli-code b{font-size:10px;margin-bottom:2px}
+  .feishu-dense .lead{font-size:13px!important;line-height:1.35}
+  .feishu-dense .feats{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr auto;gap:5px;flex:1;min-height:0}
+  .feishu-dense .feats .card{padding:8px 9px}
+  .feishu-dense .feats .card h4{font-size:14px;margin:1px 0 3px}
+  .feishu-dense .feats .card p,.feishu-dense .feats .card li{font-size:12px;line-height:1.35}
+  .feishu-dense .outcome-banner{font-size:12px!important;padding:8px 10px!important;line-height:1.35}
+  .feishu-dense .cli-code{display:none}
 
   /* TAKEAWAY */
   .take-grid{grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;flex:1;min-height:0}
@@ -759,7 +760,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
       </div>
       <div class="lead">
         主题与介绍 · 两段经历 · 能力路径 · <span class="wavy">信息差与一本书</span> · 信息源 · 工具 · Grok Bot 攻略 · Friends<br>
-        <span style="font-size:22px;color:var(--dim)">企业干货 · 可拍照带走 · 答疑另加 30′</span>
+        <span style="font-size:24px;color:var(--dim)">企业干货 · 可拍照带走 · 答疑另加 30′</span>
       </div>
       <div class="row mt-auto" style="gap:12px;align-items:center;flex-wrap:wrap;padding-bottom:4px">
         <span class="chip hl">¥2000 / hr + 答疑</span>
@@ -871,23 +872,22 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 <section class="slide mosaic-slide">
   <div class="mosaic-bar r" style="--i:0">
     <div>
-      <div class="kicker">02 个人经历① · 2022.11 → 2025.7</div>
+      <div class="kicker">02 个人经历① · 2023 → 2025.7 · 按时间线</div>
       <div class="h2">乱试 · 第一单 · 进场</div>
     </div>
     <span class="chip hl">进场期</span>
   </div>
   <div class="mosaic mosaic-a r" style="--i:1">
-
-    <div class="cell"><img src="assets/web/01-autogpt.jpg" alt="AutoGPT 乱试"><span class="cap">23 · 乱试</span></div>
-    <div class="cell"><img src="assets/web/02-meta-ad.jpg" alt="Meta 广告实验"></div>
-    <div class="cell"><img src="assets/web/03-mubert.jpg" alt="Mubert 音乐"></div>
-    <div class="cell"><img src="assets/web/04-sovits.jpg" alt="sovits 变声"></div>
-    <div class="cell"><img src="assets/web/05-runway.jpg" alt="Runway 视频"></div>
-    <div class="cell"><img src="assets/web/06-commission.jpg" alt="AI 接单"></div>
-    <div class="cell"><img src="assets/web/07-sora.jpg" alt="Sora 跟进"><span class="cap">Sora</span></div>
-    <div class="cell"><img src="assets/web/08-huka.jpg" alt="HUKA 第一单"><span class="cap">23.11 · 第一单</span></div>
-    <div class="cell"><img src="assets/web/09-veo3.jpg" alt="Veo3"></div>
-    <div class="cell"><img src="assets/web/10-huang.jpg" alt="黄仁勋相关"></div>
+    <div class="cell"><img src="assets/web/01-autogpt.jpg" alt="AutoGPT 乱试"><span class="cap">2023 · AutoGPT 乱试</span></div>
+    <div class="cell"><img src="assets/web/02-meta-ad.jpg" alt="Meta 广告实验"><span class="cap">2023 · Meta 广告实验</span></div>
+    <div class="cell"><img src="assets/web/03-mubert.jpg" alt="Mubert 音乐"><span class="cap">2023 · Mubert AI 音乐</span></div>
+    <div class="cell"><img src="assets/web/04-sovits.jpg" alt="SoVITS 变声"><span class="cap">2023 · SoVITS 变声</span></div>
+    <div class="cell"><img src="assets/web/05-runway.jpg" alt="Runway 视频"><span class="cap">2023 · Runway 视频</span></div>
+    <div class="cell"><img src="assets/web/06-commission.jpg" alt="AI 接单"><span class="cap">2023 · AI 接单试水</span></div>
+    <div class="cell"><img src="assets/web/08-huka.jpg" alt="HUKA 第一单"><span class="cap hl">23.11 · HUKA 第一单</span></div>
+    <div class="cell"><img src="assets/web/07-sora.jpg" alt="Sora 跟进"><span class="cap">2024 · Sora 跟进</span></div>
+    <div class="cell"><img src="assets/web/09-veo3.jpg" alt="Veo3"><span class="cap">2025 · Veo 跟进</span></div>
+    <div class="cell"><img src="assets/web/10-huang.jpg" alt="黄仁勋相关"><span class="cap">2025 · 进场 · 黄仁勋浪潮</span></div>
   </div>
 </section>
 
@@ -895,37 +895,36 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 <section class="slide mosaic-slide">
   <div class="mosaic-bar r" style="--i:0">
     <div>
-      <div class="kicker">03 个人经历② · 2025.7 → 2026.10</div>
+      <div class="kicker">03 个人经历② · 2026.01 → 2026.10 · 按时间线</div>
       <div class="h2">落地 · 舞台 · 大会 · 出海</div>
     </div>
     <span class="chip hl">落地期</span>
   </div>
   <div class="mosaic mosaic-b r" style="--i:1">
-
-    <div class="cell"><img src="assets/moments/2026-01-15-manga-first-pay.jpg" alt="漫剧首单"><span class="cap">01.15 · 漫剧首单</span></div>
-    <div class="cell"><img src="assets/moments/2026-01-25-aws-opc.jpg" alt="AWS OPC"></div>
-    <div class="cell"><img src="assets/moments/2026-01-28-yingke.jpg" alt="映客"></div>
-    <div class="cell"><img src="assets/moments/2026-02-01-mulanai.jpg" alt="MulanAI 一等奖"><span class="cap">02.01 · MulanAI</span></div>
-    <div class="cell"><img src="assets/moments/2026-02-03-ant.jpg" alt="蚂蚁"></div>
-    <div class="cell"><img src="assets/moments/2026-02-22-evomap.jpg" alt="EvoMap"></div>
-    <div class="cell"><img src="assets/moments/2026-03-26-tencent-clawbot.jpg" alt="腾讯 Clawbot"></div>
-    <div class="cell"><img src="assets/moments/2026-04-22-image2.jpg" alt="Image2"></div>
-    <div class="cell"><img src="assets/moments/2026-04-27-2050.jpg" alt="2050"></div>
-    <div class="cell"><img src="assets/moments/2026-05-03-automation.jpg" alt="自动化"></div>
-    <div class="cell"><img src="assets/moments/2026-05-08-cn-aidc.jpg" alt="智算之心"><span class="cap">05.08 · 智算之心</span></div>
-    <div class="cell"><img src="assets/moments/2026-05-18-xuhui.jpg" alt="徐汇"></div>
-    <div class="cell"><img src="assets/moments/2026-06-06-starry.jpg" alt="Starry"></div>
-    <div class="cell"><img src="assets/moments/2026-06-10-mythos.jpg" alt="Mythos"></div>
-    <div class="cell"><img src="assets/moments/2026-06-12-mythos-ceo.jpg" alt="Mythos CEO"></div>
-    <div class="cell"><img src="assets/moments/2026-06-25-copyright-talk.jpg" alt="外滩 FTC 版权"><span class="cap">06 · 外滩版权</span></div>
-    <div class="cell"><img src="assets/moments/2026-07-02-waic-media.jpg" alt="WAIC 媒体"></div>
-    <div class="cell"><img src="assets/moments/2026-07-06-x-出海.jpg" alt="X出海"></div>
-    <div class="cell"><img src="assets/moments/2026-07-17-waic.jpg" alt="WAIC"><span class="cap">07 · WAIC</span></div>
-    <div class="cell"><img src="assets/moments/2026-08-24-duoduoland.jpg" alt="出海之夜 DuoDuoland"><span class="cap">08.24 · 出海之夜</span></div>
-    <div class="cell"><img src="assets/moments/2026-09-10-inclusion.jpg" alt="外滩大会"></div>
-    <div class="cell"><img src="assets/moments/2026-09-12-yuri-concert.jpg" alt="Yuri 演唱会"></div>
-    <div class="cell"><img src="assets/moments/2026-09-24-yunqi.jpg" alt="云栖大会"><span class="cap">09 · 云栖</span></div>
-    <div class="cell"><img src="assets/moments/2026-10-24-kiro-hackathon.jpg" alt="Kiro Hackathon"><span class="cap">10.24 · Kiro</span></div>
+    <div class="cell"><img src="assets/moments/2026-01-15-manga-first-pay.jpg" alt="AI漫剧首单"><span class="cap hl">01.15 · AI漫剧首单</span></div>
+    <div class="cell"><img src="assets/moments/2026-01-25-aws-opc.jpg" alt="AWS OPC"><span class="cap">01.25 · AWS OPC</span></div>
+    <div class="cell"><img src="assets/moments/2026-01-28-yingke.jpg" alt="映客"><span class="cap">01.28 · 映客交流</span></div>
+    <div class="cell"><img src="assets/moments/2026-02-01-mulanai.jpg" alt="MulanAI"><span class="cap hl">02.01 · MulanAI</span></div>
+    <div class="cell"><img src="assets/moments/2026-02-03-ant.jpg" alt="蚂蚁"><span class="cap">02.03 · 蚂蚁交流</span></div>
+    <div class="cell"><img src="assets/moments/2026-02-22-evomap.jpg" alt="Bot+EvoMap"><span class="cap hl">02.22 · Bot+EvoMap</span></div>
+    <div class="cell"><img src="assets/moments/2026-03-26-tencent-clawbot.jpg" alt="腾讯微信 ClawBot"><span class="cap hl">03.26 · 腾讯微信 ClawBot</span></div>
+    <div class="cell"><img src="assets/moments/2026-04-22-image2.jpg" alt="Image2"><span class="cap">04.22 · Image2</span></div>
+    <div class="cell"><img src="assets/moments/2026-04-27-2050.jpg" alt="2050"><span class="cap">04.27 · 2050</span></div>
+    <div class="cell"><img src="assets/moments/2026-05-03-automation.jpg" alt="自动化"><span class="cap">05.03 · 自动化实践</span></div>
+    <div class="cell"><img src="assets/moments/2026-05-08-cn-aidc.jpg" alt="CN-AIDC"><span class="cap hl">05.08 · CN-AIDC</span></div>
+    <div class="cell"><img src="assets/moments/2026-05-18-xuhui.jpg" alt="徐汇文旅"><span class="cap hl">05.18 · 徐汇文旅</span></div>
+    <div class="cell"><img src="assets/moments/2026-06-06-starry.jpg" alt="Starry"><span class="cap">06.06 · Starry</span></div>
+    <div class="cell"><img src="assets/moments/2026-06-10-mythos.jpg" alt="Mythos"><span class="cap">06.10 · Mythos</span></div>
+    <div class="cell"><img src="assets/moments/2026-06-12-mythos-ceo.jpg" alt="董事长 Claude"><span class="cap hl">06.12 · 董事长 Claude</span></div>
+    <div class="cell"><img src="assets/moments/2026-06-25-copyright-talk.jpg" alt="外滩 FTC"><span class="cap hl">06.26 · 外滩 FTC</span></div>
+    <div class="cell"><img src="assets/moments/2026-07-02-waic-media.jpg" alt="WAIC 媒体日"><span class="cap">07.02 · WAIC 媒体日</span></div>
+    <div class="cell"><img src="assets/moments/2026-07-06-x-出海.jpg" alt="X出海"><span class="cap hl">07.06 · X 出海</span></div>
+    <div class="cell"><img src="assets/moments/2026-07-17-waic.jpg" alt="WAIC"><span class="cap hl">07.17 · WAIC</span></div>
+    <div class="cell"><img src="assets/moments/2026-08-24-duoduoland.jpg" alt="DuoDuoland"><span class="cap hl">08.24 · DuoDuoland</span></div>
+    <div class="cell"><img src="assets/moments/2026-09-10-inclusion.jpg" alt="外滩大会"><span class="cap hl">09.10 · 外滩大会</span></div>
+    <div class="cell"><img src="assets/moments/2026-09-12-yuri-concert.jpg" alt="演唱会 Yuri"><span class="cap hl">09.12 · 演唱会 Yuri</span></div>
+    <div class="cell"><img src="assets/moments/2026-09-24-yunqi.jpg" alt="云栖"><span class="cap hl">09.24 · 云栖</span></div>
+    <div class="cell"><img src="assets/moments/2026-10-24-kiro-hackathon.jpg" alt="亚马逊 Kiro"><span class="cap hl">10.24 · 亚马逊 Kiro</span></div>
   </div>
 </section>
 
@@ -966,7 +965,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
         <div class="card sm orange" style="padding:10px 12px"><div class="n">①</div><h4 style="font-size:16px">信息感过滤</h4><p style="font-size:13px;margin:0">来源·时效·可复现·可行动</p></div>
         <div class="card sm" style="padding:10px 12px"><div class="n">②</div><h4 style="font-size:16px">少而精 Agent/Skill</h4><p style="font-size:13px;margin:0">3–5 个真能回写的</p></div>
         <div class="card sm" style="padding:10px 12px"><div class="n">③</div><h4 style="font-size:16px">人审兜底</h4><p style="font-size:13px;margin:0">敏感写操作单独确认</p></div>
-        <div class="card sm cream" style="padding:10px 12px"><div class="n">④</div><h4 style="font-size:16px">飞书/办公回写</h4><p style="font-size:13px;margin:0">文档·群·多维表落痕</p></div>
+        <div class="card sm cream" style="padding:10px 12px"><div class="n">④</div><h4 style="font-size:16px">飞书/办公回写</h4><p style="font-size:13px;margin:0">纪要·文档·群结论落痕</p></div>
       </div>
       <div class="kol-row">
         <span class="kol"><b>Dario Amodei / Anthropic</b> — 强而有用的助手；能力与安全一起 scaling</span>
@@ -983,11 +982,11 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 <!-- 07 BOOK DEEP · one meaty page -->
 <section class="slide">
   <div class="kicker r">04 信息差·书 · 单独深读</div>
-  <div class="h2 r" style="--i:1;font-size:34px;margin-bottom:4px">《知识的边界》· Too Big to Know · 戴维·温伯格</div>
+  <div class="h2 r" style="--i:1;font-size:38px;margin-bottom:4px">《知识的边界》· Too Big to Know · 戴维·温伯格</div>
   <div class="book-deep r" style="--i:2">
     <div class="cover-col">
       <img src="assets/web/book-too-big-to-know.png" alt="《知识的边界》">
-      <p style="font-family:var(--hand);font-size:16px;color:var(--mute);text-align:center">中信出版 · 网络时代的知识论</p>
+      <p style="font-family:var(--hand);font-size:18px;color:var(--mute);text-align:center">中信出版 · 网络时代的知识论</p>
     </div>
     <div class="book-takes">
       <div class="card orange">
@@ -1274,53 +1273,50 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     <span class="chip">Remotion skills</span>
     <span class="chip">hyperframes · HTML→MP4</span>
     <span class="chip hl">Agent 写逻辑 → Skill 管节奏 → 引擎出片</span>
-    <span class="chip teal">飞书 CLI · 下一页深讲</span>
+    <span class="chip teal">飞书协同 · 下一页深讲</span>
   </div>
 </section>
 
-<!-- 12 FEISHU CLI · one dense page -->
+<!-- 12 FEISHU · consulting outcomes (not geek CLI) -->
 <section class="slide">
-  <div class="kicker r">06 工具 · 飞书 CLI · 深讲</div>
-  <div class="h2 r" style="--i:1;font-size:36px">让 Agent <span class="acc wavy">真正动手</span></div>
+  <div class="kicker r">06 工具 · 飞书协同 · 深讲</div>
+  <div class="h2 r" style="--i:1;font-size:36px">少点几下鼠标 · <span class="acc wavy">会开完的事自己往前走</span></div>
   <div class="feishu-dense r" style="--i:2">
-    <img class="hero-img" src="assets/tools/tool-feishu-cli.jpg" alt="飞书 CLI">
+    <img class="hero-img" src="assets/tools/tool-feishu-cli.jpg" alt="飞书协同">
     <div>
-      <div class="lead" style="font-size:16px;margin:0">官方开源 · <code style="color:var(--orange2)">@larksuite/cli</code> · 文档 / 多维表 / 日历 / 消息 / 任务</div>
+      <div class="lead" style="font-size:20px;margin:0">给咨询团队用的 · 会议纪要 · 知识库 · 跨群协同 · 人审再发</div>
       <div class="feats">
         <div class="card orange sm">
-          <div class="n">① Agent 动手</div>
-          <h4>推理不够 · 要落动作</h4>
-          <p>CLI 让 Agent 真的建档、查日程、回消息、回写群。</p>
+          <div class="n">① 会议纪要</div>
+          <h4>开完会，纪要就位</h4>
+          <p>讨论要点落进文档与待办，不用再复制粘贴、来回找记录。</p>
         </div>
         <div class="card sm">
-          <div class="n">② Shortcut 优先</div>
-          <h4>+verb 再 API</h4>
-          <p>优先 Shortcut；其次已注册 API；最后裸调。写操作先出计划 · 人确认。</p>
+          <div class="n">② 知识库</div>
+          <h4>提纲与方案常新</h4>
+          <p>访谈提纲、方案模板、客户笔记集中可搜 —— 新人也能接上。</p>
         </div>
         <div class="card sm">
-          <div class="n">③ bot vs user</div>
-          <h4>身份分清</h4>
-          <p><code style="color:var(--orange2)">--as bot</code> 办群事；个人日历/私信用 <code style="color:var(--orange2)">--as user</code>。</p>
+          <div class="n">③ 跨群协同</div>
+          <h4>一条结论，多个项目群</h4>
+          <p>减少转发与漏读；项目群、交付群、内部群各得一份清楚版本。</p>
         </div>
         <div class="card cream sm">
-          <div class="n">④ 群里办事</div>
-          <h4>@bot 一条龙</h4>
-          <p>妙记 → 待办 → 文档链接回群；敏感写操作单独审批。</p>
+          <div class="n">④ 少点鼠标</div>
+          <h4>重复动作交给助手</h4>
+          <p>建档、回写群、整理日程这类机械活自动化；人留在判断与客户关系上。</p>
         </div>
         <div class="card sm" style="grid-column:1 / -1">
-          <div class="n">⑤ 权限两层</div>
-          <h4>应用 scope + 用户授权</h4>
-          <p>发布新版本 → 管理员审批 · 最小 scope · <code style="color:var(--orange2)">auth status</code> 核对</p>
+          <div class="n">⑤ 人审兜底</div>
+          <h4>对外发出前，人过一眼</h4>
+          <p>敏感内容与客户可见材料单独确认；助手起草，顾问拍板。</p>
         </div>
       </div>
-      <div class="cli-code"><b>示例命令</b>npx @larksuite/cli@latest install
-lark-cli docs +create --title "客户访谈提纲"
-lark-cli im +messages-send --as bot --chat-id oc_xxx --text "纪要已写好"
-lark-cli calendar +agenda --as user</div>
+      <div class="quote-banner outcome-banner" style="margin:0;font-size:20px;padding:14px 18px">现场可带走：纪要进文档 → 结论回群 → 人审再发 · 少点鼠标，多留判断</div>
       <div class="row" style="gap:8px;flex-wrap:wrap">
-        <span class="chip hl">github.com/larksuite/cli</span>
-        <span class="chip">open.feishu.cn · Lark CLI</span>
-        <span class="chip cream">口诀：群里 bot · 个人 user · 先只读再写</span>
+        <span class="chip hl">咨询现场常用</span>
+        <span class="chip">纪要 · 知识库 · 跨群</span>
+        <span class="chip cream">口诀：助手起草 · 顾问拍板 · 少点鼠标</span>
       </div>
     </div>
   </div>
@@ -1350,14 +1346,14 @@ lark-cli calendar +agenda --as user</div>
           <li style="font-size:18px">last30days-skill · 复制墙 A 提示词</li>
           <li style="font-size:18px">Grok Bot 或 豆包输入法（二选一先装）</li>
           <li style="font-size:18px">ffmpeg-skill 或 claude-motion（按岗位）</li>
-          <li style="font-size:18px">飞书 CLI · 只读演练一遍</li>
+          <li style="font-size:18px">飞书协同 · 纪要进文档 / 结论回群</li>
           <li style="font-size:18px">订阅 OpenAI / Anthropic / DeepMind 官方博客</li>
         </ul>
       </div>
       <div class="card cream" style="padding:18px 20px">
         <div class="n">下周一条工作流</div>
         <h4 style="margin:4px 0 6px;font-size:22px">找 → 做 → 回写</h4>
-        <p style="margin:0;font-size:18px">用四条判断法筛一条信息 → Agent 起草 → 飞书 CLI 回写文档/群 · 人审兜底</p>
+        <p style="margin:0;font-size:18px">用四条判断法筛一条信息 → 助手起草 → 飞书回写文档/群 · 人审兜底</p>
       </div>
     </div>
   </div>
