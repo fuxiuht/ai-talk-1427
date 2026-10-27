@@ -451,6 +451,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 /* Tool walls — dense screenshot pages */
 .wall-grid{display:grid;gap:10px;flex:1;min-height:0;margin-top:6px;align-content:stretch}
 .wall-grid.five{grid-template-columns:repeat(5,1fr);grid-template-rows:1fr}
+.wall-grid.six{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr}
 .wall-grid.three{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr}
 .wall-cell{position:relative;background:var(--panel);border:1.5px solid var(--line-strong);border-radius:14px;
   overflow:hidden;display:flex;flex-direction:column;min-height:0;height:100%;box-shadow:0 10px 28px -18px rgba(0,0,0,.6)}
@@ -458,16 +459,31 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .wall-cell .pic{flex:0 0 38%;min-height:140px;max-height:280px;overflow:hidden;background:var(--panel2);border-bottom:1px solid var(--line)}
 .wall-cell .pic img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .wall-cell .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1;min-height:0;justify-content:center}
-.wall-cell .n{font-family:var(--hand);font-size:17px;color:var(--orange);margin:0}
-.wall-cell h4{font-size:26px;font-weight:700;margin:0;line-height:1.15;color:var(--ink)}
-.wall-cell .what{font-size:18px;line-height:1.35;color:var(--mute);margin:0;flex:1}
+.wall-cell .n{font-family:var(--hand);font-size:18px;color:var(--orange);margin:0}
+.wall-cell h4{font-size:28px;font-weight:700;margin:0;line-height:1.15;color:var(--ink)}
+.wall-cell .what{font-size:20px;line-height:1.35;color:var(--mute);margin:0;flex:1}
 .wall-cell .howto{margin-top:auto;padding:8px 10px;border-radius:8px;
   background:rgba(217,119,87,.12);border:1px solid rgba(217,119,87,.3)}
-.wall-cell .howto .lab{font-family:var(--hand);font-size:13px;color:var(--orange);display:block;margin-bottom:4px}
-.wall-cell .howto code,.wall-cell .howto .one{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;line-height:1.4;
+.wall-cell .howto .lab{font-family:var(--hand);font-size:14px;color:var(--orange);display:block;margin-bottom:4px}
+.wall-cell .howto code,.wall-cell .howto .one{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;line-height:1.4;
   color:var(--cream);display:block;white-space:pre-wrap;word-break:break-word}
 .wall-mini{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
 .wall-mini .chip{font-size:14px}
+
+/* AI native phone desktop */
+.phone-desk{display:grid;grid-template-columns:420px 1fr;gap:28px;flex:1;min-height:0;margin-top:8px;align-items:stretch}
+.phone-desk .phone-frame{display:flex;align-items:center;justify-content:center;min-height:0;height:100%;
+  background:var(--panel);border:1.5px solid var(--line-strong);border-radius:28px;padding:14px;
+  box-shadow:0 18px 48px -24px rgba(0,0,0,.75)}
+.phone-desk .phone-frame img{max-height:100%;max-width:100%;width:auto;height:100%;object-fit:contain;
+  border-radius:18px;display:block}
+.phone-desk .side{display:flex;flex-direction:column;gap:12px;min-height:0;height:100%;justify-content:center}
+.phone-desk .side .lead{font-size:28px;line-height:1.4;color:var(--mute);margin:0}
+.phone-desk .side .apps{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:none}
+.phone-desk .side .apps .card{padding:14px 16px}
+.phone-desk .side .apps .card h4{font-size:24px;margin:2px 0 4px}
+.phone-desk .side .apps .card p{font-size:18px;line-height:1.35}
+.phone-desk .side .cap-banner{margin-top:auto;font-size:22px;padding:16px 18px;line-height:1.4}
 
 /* X creators · 9 domains × 1 person · HTML grid (corporate AI learning) */
 .x9-slide .x9-lead{font-size:18px;color:var(--mute);margin:4px 0 0;line-height:1.4;flex:none}
@@ -680,7 +696,18 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .wall-grid{gap:5px;margin-top:4px;flex:1;min-height:0}
   .wall-grid.five{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,minmax(0,1fr))}
   .wall-grid.five .wall-cell:last-child{grid-column:1 / -1}
+  .wall-grid.six{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,minmax(0,1fr))}
   .wall-grid.three{grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr}
+  .phone-desk{grid-template-columns:110px 1fr;gap:8px;margin-top:4px}
+  .phone-desk .phone-frame{border-radius:12px;padding:4px}
+  .phone-desk .phone-frame img{border-radius:8px}
+  .phone-desk .side{gap:5px}
+  .phone-desk .side .lead{font-size:12px!important;line-height:1.3}
+  .phone-desk .side .apps{gap:5px}
+  .phone-desk .side .apps .card{padding:6px 7px}
+  .phone-desk .side .apps .card h4{font-size:12px;margin:0 0 2px}
+  .phone-desk .side .apps .card p{font-size:10px;line-height:1.25;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+  .phone-desk .side .cap-banner{font-size:11px!important;padding:8px 9px!important}
   .wall-cell{border-radius:10px;min-height:0}
   .wall-cell .pic{flex:0 0 34%;min-height:0;max-height:none;height:auto}
   .wall-cell .body{padding:6px 7px 7px;gap:3px}
@@ -748,6 +775,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .cover-bio .bio-list li:nth-child(n+6){display:none}
   .src-grid.creators .card p{display:none}
   .wall-cell .what{display:none}
+  .phone-desk .side .apps .card p{display:none}
   .grok-slide .gb-foot{display:none}
   .grok-slide .row.mt-auto .chip.cream{display:none}
   .grok-slide .gb-steps .card p{display:none}
@@ -884,8 +912,8 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     </div>
     <div class="card">
       <div class="n">05–06 · 源+工具</div>
-      <h4>信息源 · 工具墙 · 飞书</h4>
-      <p>一页工具墙 · 飞书深讲</p>
+      <h4>信息源 · 工具墙 · 桌面</h4>
+      <p>工具墙 · AI 桌面 · 飞书</p>
     </div>
     <div class="card orange">
       <div class="n">07 · Grok Bot · A2A</div>
@@ -1292,8 +1320,8 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 <!-- 10 TOOLS WALL A -->
 <section class="slide">
   <div class="kicker r">06 工具墙 · 请截图</div>
-  <div class="h2 r" style="--i:1;font-size:36px">检索 · 搭档 · 音视频半壁</div>
-  <div class="wall-grid five r" style="--i:2">
+  <div class="h2 r" style="--i:1;font-size:36px">检索 · 搭档 · 写作 · 音视频</div>
+  <div class="wall-grid six r" style="--i:2">
     <div class="wall-cell hl">
       <div class="pic"><img src="assets/tools/tool-last30days.jpg" alt="last30days"></div>
       <div class="body">
@@ -1352,6 +1380,60 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
           <span class="lab">最简用法</span>
           <span class="one">打开通义万相 / 阿里云百炼 · 选 Wan · 出概念片分镜</span>
         </div>
+      </div>
+    </div>
+    <div class="wall-cell hl">
+      <div class="pic"><img src="assets/tools/tool-humanizer-zh.jpg" alt="Gemini + humanizer-zh"></div>
+      <div class="body">
+        <div class="n">Combo · 写作</div>
+        <h4>Gemini 3.8 Flash Low + humanizer-zh</h4>
+        <p class="what">中文去 AI 味写作润色 · 企业文档可读</p>
+        <div class="howto">
+          <span class="lab">Skill · 用法</span>
+          <span class="one">github.com/op7418/Humanizer-zh · 测评 @Chaos9Lee998 · 可选阿杭 ah-gemini-script-polisher</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 AI NATIVE PHONE DESKTOP -->
+<section class="slide phone-desk-slide">
+  <div class="kicker r">06 工具 · AI native 手机桌面</div>
+  <div class="h2 r" style="--i:1;font-size:40px">随身一屏 · <span class="acc wavy">对话 / 笔记 / 地图 / 记账都在</span></div>
+  <div class="phone-desk r" style="--i:2">
+    <div class="phone-frame">
+      <img src="assets/tools/ai-native-phone.jpg" alt="AI native 手机桌面：ChatGPT、微信读书、录音纪要、Grok Bot、高德、flomo、钱迹">
+    </div>
+    <div class="side">
+      <p class="lead">真实在用的主屏 · 对话助手 · 读书 · 录音纪要 · Grok Bot 小组件 · 地图 · 笔记 · 记账，一屏够日常。</p>
+      <div class="apps">
+        <div class="card orange sm">
+          <div class="n">对话</div>
+          <h4>ChatGPT · Grok Bot</h4>
+          <p>主屏问答 + 小组件随手唤起</p>
+        </div>
+        <div class="card sm">
+          <div class="n">输入 · 纪要</div>
+          <h4>录音纪要 · 微信读书</h4>
+          <p>会议落字 · 阅读进系统</p>
+        </div>
+        <div class="card sm">
+          <div class="n">出行 · 笔记</div>
+          <h4>高德 · flomo</h4>
+          <p>地图导航 · 碎片想法速记</p>
+        </div>
+        <div class="card cream sm">
+          <div class="n">账本</div>
+          <h4>钱迹</h4>
+          <p>随身记账 · 少开银行 App</p>
+        </div>
+      </div>
+      <div class="quote-banner outcome-banner cap-banner">随身一屏 · 对话 / 笔记 / 地图 / 记账都在 · Dock 留常用入口</div>
+      <div class="row" style="gap:8px;flex-wrap:wrap">
+        <span class="chip hl">AI native 主屏</span>
+        <span class="chip">ChatGPT · 微信读书 · 录音纪要</span>
+        <span class="chip cream">Grok Bot widget · 高德 · flomo · 钱迹</span>
       </div>
     </div>
   </div>
