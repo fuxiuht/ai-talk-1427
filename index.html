@@ -42,8 +42,12 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
   transition:opacity .45s ease,visibility .45s,transform .45s cubic-bezier(.22,1,.36,1);overflow:hidden;z-index:1}
 .slide.active{opacity:1;visibility:visible;transform:scale(1)}
 .r{opacity:0;transform:translateY(18px)}
-.slide.active .r{animation:rise .65s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i,0)*55ms + 50ms)}
-@keyframes rise{to{opacity:1;transform:none}}
+.slide.active .r{opacity:1!important;transform:none;
+  animation:rise .65s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i,0)*55ms + 50ms)}
+@keyframes rise{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:none}
+}
 .slide.active .card{animation:glowIn 1.1s ease-out both}
 @keyframes glowIn{
   0%{box-shadow:0 10px 28px -18px rgba(0,0,0,.6),0 0 0 0 rgba(217,119,87,0)}
@@ -171,30 +175,35 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .ice-q .hint{font-size:18px;color:var(--mute);margin-top:8px}
 
 /* photo mosaic (timeline collages) */
-.slide.mosaic-slide{padding:20px 24px 28px;display:flex;flex-direction:column}
-.mosaic{flex:1;min-height:0;width:100%;height:100%;display:grid;gap:10px;align-content:stretch}
-.mosaic .cell{position:relative;overflow:hidden;border-radius:9px;min-height:0;background:var(--panel2);
-  border:1px solid rgba(244,241,234,.08)}
-.mosaic .cell img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.slide.mosaic-slide{padding:20px 24px 28px;display:flex;flex-direction:column;gap:12px}
+.mosaic{flex:1;min-height:0;width:100%;display:grid;gap:8px;align-content:stretch}
+.mosaic .cell{position:relative;overflow:hidden;border-radius:9px;min-height:0;background:#2a2a2e;
+  border:1.5px solid rgba(217,119,87,.28);box-shadow:inset 0 0 0 1px rgba(244,241,234,.04)}
+.mosaic .cell img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;
+  filter:brightness(1.12) contrast(1.06) saturate(1.05)}
 .mosaic .hero{grid-column:span 2;grid-row:span 2}
-.mosaic .cap{position:absolute;left:8px;bottom:8px;z-index:1;font-family:var(--hand);font-size:14px;
-  background:rgba(11,11,12,.78);color:var(--cream);padding:3px 9px;border-radius:6px;
-  border:1px solid rgba(217,119,87,.35);pointer-events:none;line-height:1.2}
-.mosaic .cap.hl{background:var(--orange);color:#111;border-color:transparent;font-size:15px}
-.mosaic-a{grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(2,1fr)}
-.mosaic-b{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,1fr)}
+.mosaic .cap{position:absolute;left:8px;bottom:8px;z-index:2;font-family:var(--hand);font-size:14px;
+  background:rgba(11,11,12,.88);color:var(--cream);padding:3px 9px;border-radius:6px;
+  border:1px solid rgba(217,119,87,.45);pointer-events:none;line-height:1.2;
+  text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.mosaic .cap.hl{background:var(--orange);color:#111;border-color:transparent;font-size:15px;text-shadow:none}
+.mosaic-a{grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
+.mosaic-b{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,minmax(0,1fr))}
+.mosaic-c{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
+.mosaic-c .cell img{object-position:center 12%}
 
-.mosaic-c{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr)}
-.mosaic-c .cell img{object-position:center top}
-
-.mosaic-bar{position:absolute;top:36px;left:40px;z-index:2;display:flex;align-items:center;gap:14px;
-  flex-wrap:wrap;padding:10px 16px 10px 14px;max-width:min(1100px,88%);
-  background:rgba(11,11,12,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border:1.5px solid var(--line-strong);border-radius:14px;
+/* title bar in-flow — never covers mosaic cells */
+.mosaic-bar{position:relative;top:auto;left:auto;z-index:2;display:flex;align-items:center;gap:14px;
+  flex:none;flex-wrap:wrap;padding:10px 16px 10px 14px;max-width:100%;width:100%;
+  background:rgba(22,22,24,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1.5px solid rgba(217,119,87,.4);border-radius:14px;
   box-shadow:0 12px 32px -16px rgba(0,0,0,.7)}
-.mosaic-bar .kicker{margin:0;font-size:20px}
-.mosaic-bar .h2{font-size:26px;line-height:1.15;margin:0}
+.mosaic-bar .kicker{margin:0;font-size:20px;color:var(--orange)}
+.mosaic-bar .h2{font-size:26px;line-height:1.15;margin:0;color:var(--ink)}
 .mosaic-bar .chip{font-size:15px;padding:5px 12px}
+/* mosaics: always visible — skip rise anim (mobile was blank-ish) */
+.slide.mosaic-slide .r,.slide.mosaic-slide.active .r{
+  opacity:1!important;transform:none!important;animation:none!important}
 
 /* illustrated tool cards */
 .tool-hero{display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:stretch;flex:1;min-height:0;margin-top:10px}
@@ -235,6 +244,56 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .take-grid .card h4{font-size:24px}
 .take-grid > div{display:flex;flex-direction:column;gap:14px}
 
+
+
+/* AI capability path · dense dry-goods */
+.path-slide .path-flow{display:flex;align-items:stretch;gap:8px;margin-top:8px;flex:none;flex-wrap:nowrap}
+.path-slide .path-step{flex:1;min-width:0;background:var(--panel);border:1.5px solid var(--line-strong);
+  border-radius:12px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:4px}
+.path-slide .path-step.hl{border-color:rgba(217,119,87,.55);background:linear-gradient(160deg,rgba(217,119,87,.14),var(--panel))}
+.path-slide .path-step .n{font-family:var(--hand);font-size:15px;color:var(--orange);margin:0}
+.path-slide .path-step h4{font-size:22px;margin:0;line-height:1.2;color:var(--ink)}
+.path-slide .path-step p{font-size:14px;line-height:1.35;color:var(--mute);margin:0}
+.path-slide .path-arr{flex:none;align-self:center;font-family:var(--hand);font-size:28px;color:var(--orange);padding:0 2px}
+.path-slide .path-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:14px;margin-top:12px;flex:1;min-height:0}
+.path-slide .path-grid .card{height:100%;display:flex;flex-direction:column;min-height:0;padding:18px 20px}
+.path-slide .path-grid .card h4{font-size:22px;margin:4px 0 8px}
+.path-slide .path-grid .card p,.path-slide .path-grid .card li{font-size:16px;line-height:1.4}
+.path-slide .kol-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.path-slide .kol{font-size:13px;line-height:1.35;padding:8px 12px;border-radius:10px;
+  background:rgba(217,119,87,.1);border:1px solid rgba(217,119,87,.28);color:var(--cream);max-width:100%}
+.path-slide .kol b{color:var(--orange2);font-weight:700}
+.path-slide .ent-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:auto;padding-top:10px}
+.path-slide .ent-steps .card{padding:12px 14px;min-height:0}
+.path-slide .ent-steps .card h4{font-size:17px;margin:2px 0 4px}
+.path-slide .ent-steps .card p{font-size:13px;line-height:1.35;margin:0}
+
+/* Yobiru Friends · A2A */
+.a2a-layout{display:grid;grid-template-columns:420px 1fr;gap:20px;flex:1;min-height:0;margin-top:8px;align-items:stretch}
+.a2a-layout .shot-col{display:flex;flex-direction:column;gap:10px;min-height:0;height:100%}
+.a2a-layout .shot{width:100%;flex:1;min-height:0;object-fit:cover;object-position:center;
+  border-radius:16px;border:2px solid rgba(217,119,87,.45);background:var(--panel2);
+  box-shadow:0 18px 40px -20px rgba(217,119,87,.35)}
+.a2a-layout .shot-cap{font-size:13px;color:var(--dim);line-height:1.35;flex:none}
+.a2a-layout .body{display:flex;flex-direction:column;gap:8px;min-height:0;height:100%}
+.a2a-layout .body .card{padding:12px 14px}
+.a2a-layout .body .card h4{font-size:18px;margin:2px 0 4px}
+.a2a-layout .body .card p,.a2a-layout .body .card li{font-size:14px;line-height:1.4;margin:0}
+.a2a-grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.a2a-prompt{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;line-height:1.4;
+  color:var(--cream);background:rgba(217,119,87,.1);border:1px solid rgba(217,119,87,.3);
+  border-radius:8px;padding:8px 10px;white-space:pre-wrap;word-break:break-word}
+
+@media (max-width:900px){
+  .path-slide .path-flow{flex-wrap:wrap}
+  .path-slide .path-step{flex:1 1 40%}
+  .path-slide .path-arr{display:none}
+  .path-slide .path-grid{grid-template-columns:1fr;flex:none}
+  .path-slide .ent-steps{grid-template-columns:1fr 1fr}
+  .a2a-layout{grid-template-columns:1fr;flex:none}
+  .a2a-layout .shot{max-height:220px;flex:none;height:220px}
+  .a2a-grid2{grid-template-columns:1fr}
+}
 
 /* COVER · split with bio (Impeccable layout) */
 .cover-split{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;flex:1;min-height:0;align-items:stretch;margin-top:8px}
@@ -397,15 +456,15 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .feishu-dense .feats{grid-template-columns:1fr}
   .take-grid{grid-template-columns:1fr}
   .quote-banner{font-size:18px;padding:14px 16px}
-  .mosaic-slide{padding:16px 12px 80px}
-  .mosaic-bar{position:relative;top:auto;left:auto;max-width:100%;margin-bottom:12px;
-    padding:10px 12px;backdrop-filter:none}
+  .mosaic-slide{padding:16px 12px 80px;gap:10px}
+  .mosaic-bar{max-width:100%;padding:10px 12px;backdrop-filter:none}
   .mosaic-bar .h2{font-size:20px}
-  .mosaic{height:auto;gap:6px}
+  .mosaic{height:auto;flex:none;gap:6px}
   .mosaic-a{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
   .mosaic-b{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
   .mosaic-c{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
-  .mosaic .cell{min-height:110px;aspect-ratio:4/3}
+  .mosaic .cell{min-height:120px;aspect-ratio:4/3;background:#2a2a2e}
+  .mosaic .cell img{filter:brightness(1.15) contrast(1.08)}
   .mosaic .hero{grid-column:span 2;grid-row:span 1;min-height:160px}
   .grid[style*="repeat(3"],.grid[style*="repeat(4"]{grid-template-columns:1fr!important}
   .agenda-grid{grid-template-columns:1fr;grid-template-rows:none;flex:none}
@@ -467,7 +526,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
         <span class="big-days" data-count="1427">1427</span><span class="days-unit">天</span>
       </div>
       <div class="lead">
-        主题与介绍 · 两段经历 · <span class="wavy">信息差与一本书</span> · 信息源 · 工具墙<br>
+        主题与介绍 · 两段经历 · 能力路径 · <span class="wavy">信息差与一本书</span> · 信息源 · 工具墙 · A2A<br>
         <span style="font-size:22px;color:var(--dim)">企业干货 · 可拍照带走 · 答疑另加 30′</span>
       </div>
       <div class="row mt-auto" style="gap:12px;align-items:center;flex-wrap:wrap;padding-bottom:4px">
@@ -523,34 +582,34 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
       <p>与 AI 同行 · 主线 + 身份卡片</p>
     </div>
     <div class="card">
-      <div class="n">热场</div>
-      <h4>1427 天 · 图标墙</h4>
-      <p>这些 AI 你用过哪一些？</p>
-    </div>
-    <div class="card">
-      <div class="n">02–03 · 经历</div>
-      <h4>两页个人经历</h4>
-      <p>进场期 / 落地期 · 桌面看更清楚</p>
+      <div class="n">热场 + 经历</div>
+      <h4>图标墙 · 两段经历</h4>
+      <p>进场期 / 落地期马赛克</p>
     </div>
     <div class="card orange">
+      <div class="n">能力路径 · NEW</div>
+      <h4>Chat→Agent→企业怎么用</h4>
+      <p>前沿声音 + 1–3 年形态</p>
+    </div>
+    <div class="card">
       <div class="n">04 · CORE</div>
       <h4>《知识的边界》</h4>
-      <p>深解读 + 四条判断法拍照页</p>
+      <p>深解读 + 四条判断法</p>
     </div>
     <div class="card">
-      <div class="n">05 · 信息源</div>
-      <h4>机构 / 一手</h4>
-      <p>官方博客 · 实验室 · 云文档</p>
+      <div class="n">05–06 · 源+工具</div>
+      <h4>信息源 · 工具墙 · 飞书</h4>
+      <p>截图带走 · 最简用法</p>
     </div>
     <div class="card orange">
-      <div class="n">06 · CORE</div>
-      <h4>工具墙 ×2 + 飞书 CLI</h4>
-      <p>截图带走 · 右下角最简用法</p>
+      <div class="n">A2A · 带走</div>
+      <h4>Yobiru Friends</h4>
+      <p>主Bot↔好友 · @turingou</p>
     </div>
   </div>
   <div class="row r mt-auto" style="--i:3;gap:10px;flex-wrap:wrap;align-items:center">
     <span class="chip hl">讲 60′ · 答疑另 +30′</span>
-    <span class="chip cream">路径：互动 → 介绍 → 经历 → 书 → 源 → 工具</span>
+    <span class="chip cream">路径：互动 → 介绍 → 经历 → 能力路径 → 书 → 源 → 工具 → A2A</span>
   </div>
 </section>
 
@@ -578,6 +637,9 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 
 <!-- 05 个人经历① -->
 <section class="slide mosaic-slide">
+  <div class="mosaic-bar r" style="--i:0">
+    <div>
+      <div class="kicker">02 个人经历① · 2022.11 → 2025.7</div>
   <div class="mosaic mosaic-a r" style="--i:1">
     <div class="cell"><img src="assets/web/01-autogpt.jpg" alt="AutoGPT 乱试"><span class="cap">23 · 乱试</span></div>
     <div class="cell"><img src="assets/web/02-meta-ad.jpg" alt="Meta 广告实验"></div>
@@ -590,9 +652,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     <div class="cell"><img src="assets/web/09-veo3.jpg" alt="Veo3"></div>
     <div class="cell"><img src="assets/web/10-huang.jpg" alt="黄仁勋相关"></div>
   </div>
-  <div class="mosaic-bar r" style="--i:0">
-    <div>
-      <div class="kicker">02 个人经历① · 2022.11 → 2025.7</div>
+  
       <div class="h2">乱试 · 第一单 · 进场</div>
     </div>
     <span class="chip hl">进场期</span>
@@ -601,6 +661,9 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 
 <!-- 06 个人经历② -->
 <section class="slide mosaic-slide">
+  <div class="mosaic-bar r" style="--i:0">
+    <div>
+      <div class="kicker">03 个人经历② · 2025.7 → 2026.10</div>
   <div class="mosaic mosaic-b r" style="--i:1">
     <div class="cell"><img src="assets/moments/2026-01-15-manga-first-pay.jpg" alt="漫剧首单"><span class="cap">01.15 · 漫剧首单</span></div>
     <div class="cell"><img src="assets/moments/2026-01-25-aws-opc.jpg" alt="AWS OPC"></div>
@@ -627,12 +690,61 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     <div class="cell"><img src="assets/moments/2026-09-24-yunqi.jpg" alt="云栖大会"><span class="cap">09 · 云栖</span></div>
     <div class="cell"><img src="assets/moments/2026-10-24-kiro-hackathon.jpg" alt="Kiro Hackathon"><span class="cap">10.24 · Kiro</span></div>
   </div>
-  <div class="mosaic-bar r" style="--i:0">
-    <div>
-      <div class="kicker">03 个人经历② · 2025.7 → 2026.10</div>
+  
       <div class="h2">落地 · 舞台 · 大会 · 出海</div>
     </div>
     <span class="chip hl">落地期</span>
+  </div>
+</section>
+
+
+<!-- 06b AI 能力路径 · 未来形态 · 企业怎么用 -->
+<section class="slide path-slide">
+  <div class="kicker r">能力路径 · 前沿声音 · 请拍照</div>
+  <div class="h2 r" style="--i:1;font-size:40px;margin-bottom:2px">AI 能力发展路径 · 未来形态 · <span class="acc">企业怎么用</span></div>
+  <div class="path-flow r" style="--i:2">
+    <div class="path-step"><div class="n">①</div><h4>Chat</h4><p>问答 / 草稿 · 人主导每一次</p></div>
+    <div class="path-arr">→</div>
+    <div class="path-step"><div class="n">②</div><h4>Copilot</h4><p>嵌进 IDE / 文档 · 并肩改</p></div>
+    <div class="path-arr">→</div>
+    <div class="path-step hl"><div class="n">③ 现在</div><h4>Agent</h4><p>用工具 · 多步任务 · 可回写</p></div>
+    <div class="path-arr">→</div>
+    <div class="path-step hl"><div class="n">④ 近未来</div><h4>Multi-Agent</h4><p>分工协作 · 嵌进工作流</p></div>
+  </div>
+  <div class="path-grid r" style="--i:3">
+    <div class="card orange">
+      <div class="n">1–3 年 · 近未来形态</div>
+      <h4>Computer-use · 可靠工具 · 组织知识</h4>
+      <ul class="clean" style="margin:4px 0 0">
+        <li>Agent 直接操作电脑 / 浏览器（点、填、跑）</li>
+        <li>工具调用更稳：检索 · 代码 · 办公套件</li>
+        <li>吃进企业私有知识：规范、案例、权限边界</li>
+        <li>人审兜底仍在：写操作先计划，再执行</li>
+      </ul>
+      <div class="kol-row">
+        <span class="kol"><b>Sam Altman / OpenAI</b> — agents that use computers；经济影响渐进展开</span>
+        <span class="kol"><b>Andrej Karpathy</b> — Software 2.0；coding agents 成新界面</span>
+        <span class="kol"><b>Demis Hassabis / DeepMind</b> — AGI 作科学工具 / world models</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="n">企业怎么落地 · 四步</div>
+      <h4>少而精 · 嵌流程 · 可审计</h4>
+      <div class="ent-steps" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;padding-top:0">
+        <div class="card sm orange" style="padding:10px 12px"><div class="n">①</div><h4 style="font-size:16px">信息感过滤</h4><p style="font-size:13px;margin:0">来源·时效·可复现·可行动</p></div>
+        <div class="card sm" style="padding:10px 12px"><div class="n">②</div><h4 style="font-size:16px">少而精 Agent/Skill</h4><p style="font-size:13px;margin:0">3–5 个真能回写的</p></div>
+        <div class="card sm" style="padding:10px 12px"><div class="n">③</div><h4 style="font-size:16px">人审兜底</h4><p style="font-size:13px;margin:0">敏感写操作单独确认</p></div>
+        <div class="card sm cream" style="padding:10px 12px"><div class="n">④</div><h4 style="font-size:16px">飞书/办公回写</h4><p style="font-size:13px;margin:0">文档·群·多维表落痕</p></div>
+      </div>
+      <div class="kol-row">
+        <span class="kol"><b>Dario Amodei / Anthropic</b> — 强而有用的助手；能力与安全一起 scaling</span>
+        <span class="kol"><b>Ethan Mollick</b> — centaur / co-pilot 职场；实验文化先于堆工具</span>
+      </div>
+    </div>
+  </div>
+  <div class="row r mt-auto" style="--i:4;gap:8px;flex-wrap:wrap;margin-top:10px">
+    <span class="chip hl">口诀：Chat 会问 → Copilot 会改 → Agent 会办 → Multi-Agent 会分工</span>
+    <span class="chip cream">引用为公开表述之准确转述 · 非逐字引语</span>
   </div>
 </section>
 
@@ -788,6 +900,9 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 
 <!-- 09b INFO SOURCES · WeChat quality accounts mosaic -->
 <section class="slide mosaic-slide">
+  <div class="mosaic-bar r" style="--i:0">
+    <div>
+      <div class="kicker">05 信息源 · 优质公众号</div>
   <div class="mosaic mosaic-c r" style="--i:1">
     <div class="cell"><img src="assets/sources/wechat/01-canghe.jpg" alt="苍何"><span class="cap hl">苍何</span></div>
     <div class="cell"><img src="assets/sources/wechat/02-karl.jpg" alt="卡尔的AI沃茨"><span class="cap hl">卡尔的AI沃茨</span></div>
@@ -798,9 +913,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
     <div class="cell"><img src="assets/sources/wechat/07-zangai.jpg" alt="葬AI"><span class="cap">葬AI</span></div>
     <div class="cell"><img src="assets/sources/wechat/08-yinhai.jpg" alt="AI产品银海"><span class="cap">AI产品银海</span></div>
   </div>
-  <div class="mosaic-bar r" style="--i:0">
-    <div>
-      <div class="kicker">05 信息源 · 优质公众号</div>
+  
       <div class="h2">真人博主 · 可复现干货 · 非水号</div>
     </div>
     <span class="chip">现场扫一扫 / 搜同名</span>
@@ -1016,6 +1129,60 @@ lark-cli calendar +agenda --as user</div>
   </div>
 </section>
 
+
+<!-- 13b YOBIRU FRIENDS · 郭宇 @turingou -->
+<section class="slide">
+  <div class="kicker r">Grok Bot · A2A · Yobiru Friends · 请拍照</div>
+  <div class="h2 r" style="--i:1;font-size:34px">人聊主 Bot · Bot 聊好友 · <span class="acc">@turingou</span> 发布</div>
+  <div class="a2a-layout r" style="--i:2">
+    <div class="shot-col">
+      <img class="shot" src="assets/tools/yobiru-friends.jpg" alt="Yobiru Friends 演示">
+      <div class="shot-cap">Demo · bots.yobiru.com/@guoyu · yobiru.com · github.com/chekusu/yobiru</div>
+    </div>
+    <div class="body">
+      <div class="card orange">
+        <div class="n">① 是什么</div>
+        <h4>不同人的 personal agent 互聊</h4>
+        <p>Grok Bot / Muse 等对外发布；好友的 agent 用链接连上 → <b style="color:var(--cream)">发消息 · 传文件 · 约日程</b>。各自留在自己的 agent 里，不必开网页聊天页。</p>
+      </div>
+      <div class="a2a-grid2">
+        <div class="card">
+          <div class="n">② Follow vs Friends</div>
+          <h4>单向关注 · 互关=好友</h4>
+          <p>关注单向：请求进收件箱可过滤。互相关注=好友 → 私信直达对方 Grok Bot，无需人每次批准。</p>
+        </div>
+        <div class="card">
+          <div class="n">③ 隐私边界</div>
+          <h4>按访客/粉丝/好友授权</h4>
+          <p>默不开放私有文件与记忆；E2E 加密；可自托管网关。人审落在权限与好友边界。</p>
+        </div>
+      </div>
+      <div class="card cream">
+        <div class="n">④ 怎么试 · 对你的 Grok Bot 说</div>
+        <div class="a2a-prompt">请按照 https://yobiru.com/zh-cn/install.md 上的官方说明，安装并注册 Yobiru Friends。然后连接 https://bots.yobiru.com/@guoyu</div>
+        <p style="margin-top:6px;font-size:13px;color:var(--mute)">官网 yobiru.com · 仓库 github.com/chekusu/yobiru · 示例 ID @guoyu</p>
+      </div>
+      <div class="a2a-grid2">
+        <div class="card">
+          <div class="n">⑤ 企业怎么用</div>
+          <h4>跨人协作交给 agent</h4>
+          <p>传话 · 约时间 · 传文件；人只审权限与好友关系，不审每一条聊天。</p>
+        </div>
+        <div class="card">
+          <div class="n">⑥ 后续观察</div>
+          <h4>Muse 自动选 Friends</h4>
+          <p>云电脑装不了 Tailscale 时，Muse 自动用 Friends 连通 Grokbot + Codex（@turingou 后述）。</p>
+        </div>
+      </div>
+      <div class="row" style="gap:8px;flex-wrap:wrap;margin-top:auto">
+        <span class="chip hl">来源 · @turingou · 2026.10.25 · status/2114175110416675209</span>
+        <span class="chip">像用户聊主 Bot ↔ Ally</span>
+        <span class="chip cream">开源 · 可自建网关</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 14 CONTACT -->
 <section class="slide">
   <div class="kicker r">Contact · 感谢 · 答疑 +30′</div>
@@ -1086,7 +1253,10 @@ lark-cli calendar +agenda --as user</div>
     if(mq.matches){
       window.scrollTo({top:0,behavior:instant?'auto':'smooth'});
     }
-    if(instant) requestAnimationFrame(()=>document.body.classList.remove('noanim'));
+    if(instant){
+      /* two rAFs: ensure layout with noanim, then release so .slide.active .r opacity:1 sticks */
+      requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.remove('noanim')));
+    }
   }
   function next(){go(i+1)}
   function prev(){go(i-1)}
