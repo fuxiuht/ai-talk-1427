@@ -56,9 +56,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
 
 .kicker{font-family:var(--hand);font-size:26px;color:var(--orange);display:flex;align-items:center;gap:12px;margin-bottom:8px;letter-spacing:.04em;flex:none}
 .kicker::before{content:"";width:26px;height:0;border-top:2.5px solid currentColor;transform:rotate(-2deg)}
-.h1{font-family:var(--hand);font-weight:400;font-size:96px;line-height:1.1;color:var(--ink);letter-spacing:.02em}
-.h2{font-family:var(--hand);font-weight:400;font-size:52px;line-height:1.18;color:var(--ink)}
-.lead{font-size:24px;line-height:1.55;color:var(--mute);max-width:1280px}
+.h1{font-family:var(--hand);font-weight:400;font-size:92px;line-height:1.05;color:var(--ink);letter-spacing:.01em;text-wrap:balance}
+.h2{font-family:var(--hand);font-weight:400;font-size:56px;line-height:1.12;color:var(--ink);text-wrap:balance}
+.lead{font-size:28px;line-height:1.5;color:var(--mute);max-width:100%}
 .mute{color:var(--mute)}.acc{color:var(--orange)}
 .wavy{text-decoration:underline;text-decoration-style:wavy;text-decoration-color:var(--orange);text-underline-offset:6px}
 .mark{background:linear-gradient(transparent 62%,rgba(255,106,26,.35) 62%);padding:0 .06em}
@@ -69,15 +69,15 @@ html,body{width:100%;height:100%;overflow:hidden;background:#050505;color:var(--
 .fill-grid{flex:1;min-height:0;margin-top:12px;align-content:stretch}
 .agenda-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:14px;margin-top:14px;flex:1;min-height:0}
 .agenda-grid .card{display:flex;flex-direction:column;justify-content:center;height:100%;min-height:0;padding:28px 26px}
-.agenda-grid .card h4{font-size:28px;margin:6px 0 10px}
-.agenda-grid .card p{font-size:20px;line-height:1.45}
+.agenda-grid .card h4{font-size:30px;margin:6px 0 10px;line-height:1.25;text-wrap:balance}
+.agenda-grid .card p,.card li{font-size:22px;line-height:1.45}
 .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;margin-top:16px;flex:1;min-height:0;align-items:stretch}
 .contact-grid > div:first-child{display:flex;flex-direction:column;gap:14px;min-height:0}
 .contact-grid > div:first-child .card{flex:1;display:flex;flex-direction:column;justify-content:center}
 .contact-grid .card.orange{height:100%;justify-content:center}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;
   border:1.5px solid var(--line-strong);border-radius:999px;
-  background:var(--panel);font-size:17px;color:var(--ink);white-space:nowrap}
+  background:var(--panel);font-size:18px;color:var(--ink);white-space:nowrap}
 .chip.hl{background:var(--orange-soft);border-color:rgba(255,106,26,.55);color:var(--orange2)}
 .chip.teal{border-color:rgba(45,212,191,.4);color:var(--teal);background:rgba(45,212,191,.08)}
 .chip.cream{border-color:rgba(240,230,216,.35);color:var(--cream)}
@@ -235,6 +235,25 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .take-grid .card h4{font-size:24px}
 .take-grid > div{display:flex;flex-direction:column;gap:14px}
 
+
+/* COVER · split with bio (Impeccable layout) */
+.cover-split{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;flex:1;min-height:0;align-items:stretch;margin-top:8px}
+.cover-left{display:flex;flex-direction:column;min-height:0}
+.cover-left .h1{font-size:84px;margin-top:8px}
+.cover-left .big-days{font-size:160px}
+.cover-left .days-unit{font-family:var(--hand);font-size:56px;margin-left:12px;vertical-align:super;color:var(--orange2)}
+.cover-left .lead{margin-top:18px;font-size:26px;max-width:36ch}
+.cover-bio{background:var(--panel);border:1.5px solid var(--line-strong);border-radius:18px;padding:22px 24px 20px;
+  display:flex;flex-direction:column;min-height:0;height:100%;box-shadow:0 18px 40px -24px rgba(0,0,0,.7)}
+.cover-bio .bio-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.cover-bio .bio-head img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,106,26,.55);flex-shrink:0}
+.cover-bio .bio-head .who{font-family:var(--hand);font-size:36px;line-height:1;color:var(--ink)}
+.cover-bio .bio-head .wx{font-size:16px;color:var(--mute);margin-top:6px}
+.cover-bio .bio-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;flex:1;min-height:0;justify-content:space-evenly}
+.cover-bio .bio-list li{display:grid;grid-template-columns:10px 1fr;gap:12px;align-items:start;font-size:18px;line-height:1.35;color:var(--cream)}
+.cover-bio .bio-list li::before{content:"";width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 3px rgba(255,106,26,.22)}
+.cover-bio .bio-list .tag{display:inline-block;font-family:var(--hand);font-size:14px;color:var(--orange);margin-right:6px}
+
 /* ABOUT · clean identity */
 .about-layout{display:grid;grid-template-columns:260px 1fr;gap:36px;flex:1;min-height:0;margin-top:8px;align-items:stretch}
 .about-left{display:flex;flex-direction:column;gap:14px;align-items:flex-start;height:100%;min-height:0}
@@ -355,6 +374,10 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .about-left{flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px}
   .about-left .name{font-size:40px}
   .about-left .one-liner{max-width:100%;font-size:15px}
+  .cover-split{grid-template-columns:1fr;gap:18px}
+  .cover-left .h1{font-size:48px}
+  .cover-left .big-days{font-size:96px}
+  .cover-bio .bio-list li{font-size:16px}
   .id-grid{grid-template-columns:1fr}
   .agent-layout{grid-template-columns:1fr;gap:14px}
   .agent-wall{min-height:220px;aspect-ratio:16/10}
@@ -436,23 +459,42 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 
 <!-- 01 COVER -->
 <section class="slide" data-t="cover">
-  <div class="kicker r" style="--i:0">2026.10.27 · 咨询现场 · 60′讲 + 30′答疑</div>
-  <div class="h1 r" style="--i:1;margin-top:12px">与 AI 同行</div>
-  <div class="r" style="--i:2;margin-top:6px">
-    <span class="big-days" data-count="1427">1427</span>
-    <span style="font-family:var(--hand);font-size:64px;margin-left:14px;vertical-align:super;color:var(--orange2)">天</span>
+  <div class="cover-split">
+    <div class="cover-left r" style="--i:0">
+      <div class="kicker">2026.10.27 · 咨询现场 · 60′讲 + 30′答疑</div>
+      <div class="h1">与 AI 同行</div>
+      <div style="margin-top:4px">
+        <span class="big-days" data-count="1427">1427</span><span class="days-unit">天</span>
+      </div>
+      <div class="lead">
+        主题与介绍 · 两段经历 · <span class="wavy">信息差与一本书</span> · 信息源 · 工具墙<br>
+        <span style="font-size:22px;color:var(--dim)">企业干货 · 可拍照带走 · 答疑另加 30′</span>
+      </div>
+      <div class="row mt-auto" style="gap:12px;align-items:center;flex-wrap:wrap;padding-bottom:4px">
+        <span class="chip hl">¥2000 / hr + 答疑</span>
+        <span class="chip">自 2022.11.30 ChatGPT</span>
+        <span class="chip teal">←→ / 空格 / 滑动</span>
+      </div>
+    </div>
+    <aside class="cover-bio r" style="--i:1" aria-label="个人介绍">
+      <div class="bio-head">
+        <img src="assets/web/avatar.jpg" alt="福秀">
+        <div>
+          <div class="who">福秀</div>
+          <div class="wx">微信 fuxiuDSG · 可约 Coffee Chat</div>
+        </div>
+      </div>
+      <ul class="bio-list">
+        <li><span><span class="tag">技术</span>上海智隽 CTO · 火山云 &amp; 阿里云合作伙伴</span></li>
+        <li><span><span class="tag">算力</span>CN-AIDC 智算之心 · 技术合伙人</span></li>
+        <li><span><span class="tag">实验室</span>星辰 StarLab 上海负责人 · 万象 AI 实验室城市合伙人</span></li>
+        <li><span><span class="tag">内容</span>红果 S 级 AI 仿真人剧《国运擂台》制作方</span></li>
+        <li><span><span class="tag">社群</span>408 骑士团创始人 · 已运营 1000+ 天</span></li>
+        <li><span><span class="tag">产业</span>长三角高端产业促进中心 · AI 专委会</span></li>
+        <li><span><span class="tag">一线</span>羊伍六 AI 赋能官 · 年销约 6 亿生鲜</span></li>
+      </ul>
+    </aside>
   </div>
-  <div class="lead r" style="--i:3;margin-top:28px;max-width:1180px">
-    主题与介绍 · 两段经历 · <span class="wavy">信息差与一本书</span> · 机构+公众号+小红书 · 工具墙<br>
-    <span style="font-size:20px">企业干货 · 可拍照带走 · 答疑另加 30′</span>
-  </div>
-  <div class="row r mt-auto" style="--i:4;gap:14px;align-items:center;flex-wrap:wrap;padding-bottom:8px">
-    <span class="chip hl">演讲者 · 福秀</span>
-    <span class="chip">自 2022.11.30 ChatGPT</span>
-    <span class="chip cream">¥2000 / hr + 答疑</span>
-    <span class="chip teal">←→ / 空格 / 滑动翻页</span>
-  </div>
-  <div class="src">微信 fuxiuDSG · 扫码页在最后</div>
 </section>
 
 <!-- 02 ICEBREAKER · AI apps icon wall -->
@@ -524,7 +566,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
       <span class="chip hl">演讲者</span>
     </div>
     <div class="id-grid">
-      <div class="card orange"><div class="n">公司</div><h4>模幻数科 CEO · 智隽 CTO</h4></div>
+      <div class="card orange"><div class="n">公司</div><h4>智隽 CTO</h4></div>
       <div class="card"><div class="n">云与算力</div><h4>火山云 &amp; 阿里云伙伴 · CN-AIDC 智算之心</h4></div>
       <div class="card"><div class="n">实验室 / 城市</div><h4>StarLab 上海 · 万象 AI 实验室</h4></div>
       <div class="card cream"><div class="n">内容 / 社区</div><h4>国运擂台制作方 · 408 骑士团</h4></div>
