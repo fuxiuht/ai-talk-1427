@@ -221,23 +221,16 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
 .take-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;margin-top:20px;flex:1;min-height:0}
 .take-grid .card h4{font-size:24px}
 
-/* ABOUT mindmap */
-.about-layout{display:grid;grid-template-columns:280px 1fr;gap:36px;flex:1;min-height:0;margin-top:12px;align-items:stretch}
+/* ABOUT · clean identity */
+.about-layout{display:grid;grid-template-columns:260px 1fr;gap:40px;flex:1;min-height:0;margin-top:16px;align-items:start}
 .about-left{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.about-left .name{font-family:var(--hand);font-size:72px;line-height:1;color:var(--ink)}
-.about-left .one-liner{font-size:18px;line-height:1.45;color:var(--mute);max-width:260px}
-.mindmap-wrap{position:relative;border-radius:18px;overflow:hidden;border:2px solid rgba(255,106,26,.4);
-  box-shadow:0 20px 50px -20px rgba(255,106,26,.35);background:var(--panel2);min-height:0}
-.mindmap-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.mindmap-fallback{display:none;padding:24px;height:100%;align-content:center;justify-items:center;gap:10px;
-  grid-template-columns:repeat(3,1fr)}
-.mindmap-wrap.broken img{display:none}
-.mindmap-wrap.broken .mindmap-fallback{display:grid}
-.mm-center{grid-column:2;grid-row:2;width:120px;height:120px;border-radius:50%;
-  display:grid;place-items:center;background:var(--orange);color:#111;font-family:var(--hand);font-size:28px;
-  box-shadow:0 0 0 8px rgba(255,106,26,.2)}
-.mm-node{padding:10px 14px;border-radius:12px;border:1.5px solid var(--line-strong);background:var(--panel);
-  font-size:15px;text-align:center;color:var(--cream);line-height:1.3}
+.about-left .name{font-family:var(--hand);font-size:64px;line-height:1;color:var(--ink)}
+.about-left .one-liner{font-size:18px;line-height:1.5;color:var(--mute);max-width:240px}
+.id-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-content:start;width:100%}
+.id-grid .card{padding:16px 18px;margin:0}
+.id-grid .card .n{font-size:13px;letter-spacing:.06em;margin-bottom:6px}
+.id-grid .card h4{font-size:20px;margin:0;line-height:1.35}
+.id-grid .card p{display:none}
 
 /* Personal agents icebreaker */
 .agent-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;flex:1;min-height:0;margin-top:14px}
@@ -334,7 +327,7 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   .about-left{flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px}
   .about-left .name{font-size:40px}
   .about-left .one-liner{max-width:100%;font-size:15px}
-  .mindmap-wrap{min-height:280px;aspect-ratio:4/3}
+  .id-grid{grid-template-columns:1fr}
   .agent-layout{grid-template-columns:1fr;gap:14px}
   .agent-wall{min-height:220px;aspect-ratio:16/10}
   .agent-chip{font-size:16px;padding:10px 14px}
@@ -449,8 +442,8 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   <div class="grid r" style="--i:2;grid-template-columns:repeat(3,1fr);margin-top:24px;gap:14px">
     <div class="card orange">
       <div class="n">01 · 主题·介绍</div>
-      <h4>封面 · 思维导图</h4>
-      <p>与 AI 同行 · 福秀身份展开</p>
+      <h4>封面 · 身份一页</h4>
+      <p>与 AI 同行 · 主线 + 身份卡片</p>
     </div>
     <div class="card">
       <div class="n">热场</div>
@@ -484,31 +477,24 @@ a{color:var(--orange2);text-decoration:underline;text-underline-offset:3px}
   </div>
 </section>
 
-<!-- 04 ABOUT · mindmap -->
+<!-- 04 ABOUT · clean -->
 <section class="slide">
   <div class="kicker r">01 主题·介绍</div>
-  <div class="about-layout r" style="--i:1">
+  <div class="h2 r" style="--i:1;margin-bottom:8px">今天的主线 · 一人一句</div>
+  <div class="about-layout r" style="--i:2">
     <div class="about-left">
       <img class="avatar" src="assets/web/avatar.jpg" alt="福秀">
       <div class="name">福秀</div>
       <p class="one-liner">把 <span class="acc">信息感</span> 养起来，再用少而精的工具，把 AI 嵌进企业真实工作流。</p>
       <span class="chip hl">演讲者</span>
     </div>
-    <div class="mindmap-wrap" id="mindmapWrap">
-      <img src="assets/tools/fuxiu-mindmap.jpg" alt="福秀身份思维导图" onerror="this.parentElement.classList.add('broken')">
-      <div class="mindmap-fallback" aria-hidden="true">
-        <div class="mm-node">模幻数科 CEO</div>
-        <div class="mm-node">智隽 CTO</div>
-        <div class="mm-node">StarLab 上海</div>
-        <div class="mm-center">福秀</div>
-        <div class="mm-node">CN-AIDC<br>智算之心</div>
-        <div class="mm-node">长三角高端产业促进中心<br>· AI 专委会</div>
-        <div class="mm-node">万象AI实验室</div>
-        <div class="mm-node">国运擂台制作方</div>
-        <div class="mm-node">408骑士团</div>
-        <div class="mm-node">火山云 &amp; 阿里云伙伴</div>
-        <div class="mm-node">羊伍六 · AI 赋能</div>
-      </div>
+    <div class="id-grid">
+      <div class="card orange"><div class="n">公司</div><h4>模幻数科 CEO · 智隽 CTO</h4></div>
+      <div class="card"><div class="n">云与算力</div><h4>火山云 &amp; 阿里云伙伴 · CN-AIDC 智算之心</h4></div>
+      <div class="card"><div class="n">实验室 / 城市</div><h4>StarLab 上海 · 万象 AI 实验室</h4></div>
+      <div class="card cream"><div class="n">内容 / 社区</div><h4>国运擂台制作方 · 408 骑士团</h4></div>
+      <div class="card"><div class="n">产业组织</div><h4>长三角高端产业促进中心 · AI 专委会</h4></div>
+      <div class="card orange"><div class="n">一线经历</div><h4>羊伍六 · AI 赋能官</h4></div>
     </div>
   </div>
 </section>
